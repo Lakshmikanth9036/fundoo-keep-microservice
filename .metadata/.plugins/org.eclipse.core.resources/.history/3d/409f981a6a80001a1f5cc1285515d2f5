@@ -1,0 +1,3 @@
+2020-04-17 10:41:16 [http-nio-8082-exec-1] INFO  com.bridgelabz.notificationservice.controller.NotificationController %PARSER_ERROR[x] -kanth1997.9036@gmail.com
+2020-04-17 10:41:16 [http-nio-8082-exec-1] INFO  com.bridgelabz.notificationservice.controller.NotificationController %PARSER_ERROR[x] -944302432hema
+2020-04-17 10:41:39 [AsyncResolver-bootstrap-executor-0] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver %PARSER_ERROR[x] -Resolving eureka endpoints via configuration

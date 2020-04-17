@@ -1,0 +1,14 @@
+spring:
+  profiles: dev
+  mail:
+    username: ${mailId}
+    password: ${mailPassword}
+    
+eureka:
+  client:
+    register-with-eureka:  true
+    fetch-registry:  true
+    serviceUrl:
+      defaultZone: http://localhost:8070/eureka/
+  instance:
+    hostname: localhost

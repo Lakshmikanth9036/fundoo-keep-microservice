@@ -1,0 +1,12 @@
+package com.bridgelabz.userservice.controller;
+
+import org.springframework.http.ResponseEntity;
+
+import com.bridgelabz.userservice.dto.Response;
+
+public class UserServiceController {
+
+	
+//	public ResponseEntity<Response> register(){
+//	}
+}
