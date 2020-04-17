@@ -50,13 +50,13 @@ public class User {
 	@Column(name = "ProfilePic")
 	private String profilePic;
 
-	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "UserId")
-	private List<Note> notes;
-
-	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "UserId")
-	private List<Label> labels;
+//	@OneToMany(cascade = CascadeType.ALL)
+//	@JoinColumn(name = "UserId")
+//	private List<Note> notes;
+//
+//	@OneToMany(cascade = CascadeType.ALL)
+//	@JoinColumn(name = "UserId")
+//	private List<Label> labels;
 	
 //	@ManyToMany
 //	private List<Collaborator> collaborators;
@@ -155,21 +155,21 @@ public class User {
 		this.profilePic = profilePic;
 	}
 
-	public List<Note> getNotes() {
-		return notes;
-	}
-
-	public void setNotes(List<Note> notes) {
-		this.notes = notes;
-	}
-
-	public List<Label> getLabels() {
-		return labels;
-	}
-
-	public void setLabels(List<Label> labels) {
-		this.labels = labels;
-	}
+//	public List<Note> getNotes() {
+//		return notes;
+//	}
+//
+//	public void setNotes(List<Note> notes) {
+//		this.notes = notes;
+//	}
+//
+//	public List<Label> getLabels() {
+//		return labels;
+//	}
+//
+//	public void setLabels(List<Label> labels) {
+//		this.labels = labels;
+//	}
 
 //	public List<Collaborator> getCollaborators() {
 //		return collaborators;

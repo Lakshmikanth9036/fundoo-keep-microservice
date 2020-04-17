@@ -1,7 +1,9 @@
 spring:
   mail:
-    username: ${mailId}
-    password: ${mailPassword}
+    username: kanth1997.9036@gmail.com 
+#    ${mailId}
+    password: 
+#    ${mailPassword}
     
 eureka:
   client:
@@ -11,3 +13,12 @@ eureka:
       defaultZone: http://localhost:8761/eureka/
   instance:
     hostname: localhost
+    
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
+            

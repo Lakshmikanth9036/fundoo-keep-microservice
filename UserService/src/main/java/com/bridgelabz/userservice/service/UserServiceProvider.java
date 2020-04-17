@@ -51,7 +51,7 @@ public class UserServiceProvider implements UserService {
 	@Override
 	public void saveUser(RegistrationDTO register) {
 
-		log.info(register.getEmailAddress());
+		log.info("Save User Method ===> registered with ===> "+register.getEmailAddress());
 		if (repository.findByEmailAddress(register.getEmailAddress()).isPresent())
 			throw new UserException(HttpStatus.FOUND.value(), env.getProperty("103"));
 
@@ -65,7 +65,7 @@ public class UserServiceProvider implements UserService {
 				mail.setSubject(Constants.REGISTRATION_STATUS);
 				mail.setContext("Hi " + user.getFirstName() + " " + user.getLastName() + Constants.REGISTRATION_MESSAGE
 						+ Constants.VERIFICATION_LINK + jwt.generateToken(user.getUserId()));
-				ResponseEntity<Response> res = restTemplate.postForEntity(Constants.URL, mail, Response.class);
+				restTemplate.postForEntity(Constants.URL, mail, Response.class);
 			}
 		} catch (UserException e) {
 			throw new UserException(400, env.getProperty("102"));
@@ -103,8 +103,6 @@ public class UserServiceProvider implements UserService {
 		if (user.isUserVerified() && user !=null) {
 			if (encoder.matches(login.getPassword(), user.getPassword())) {
 				user.setPassword(null);
-				user.setNotes(null);
-				user.setLabels(null);
 				return new LoginResponse(HttpStatus.OK.value(), env.getProperty("202"), user,
 						jwt.generateUserToken(user.getUserId()));
 			}
@@ -125,7 +123,7 @@ public class UserServiceProvider implements UserService {
 		mail.setTo(emailAddress);
 		mail.setSubject(Constants.RESET_MSG);
 		mail.setContext(Constants.RESET_PASSWORD_LINK + jwt.generateToken(user.getUserId()));
-		ResponseEntity<Response> res = restTemplate.postForEntity(Constants.URL, mail, Response.class);
+		restTemplate.postForEntity(Constants.URL, mail, Response.class);
 	}
 
 	/**
