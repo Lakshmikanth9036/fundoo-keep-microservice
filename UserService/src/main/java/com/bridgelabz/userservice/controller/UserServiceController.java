@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -71,5 +72,11 @@ public class UserServiceController {
 			return ResponseEntity.status(HttpStatus.OK).body(new Response(HttpStatus.OK.value(), env.getProperty("203")));
 		return ResponseEntity.badRequest()
 				.body(new Response(HttpStatus.BAD_REQUEST.value(), env.getProperty("402")));
+	}
+	
+	@GetMapping("/userExist")
+	private ResponseEntity<Response> userExist(@RequestParam String token){
+		return ResponseEntity.ok()
+				.body(new Response(HttpStatus.OK.value(), env.getProperty("219"), service.getUserByToken(token)));
 	}
 }

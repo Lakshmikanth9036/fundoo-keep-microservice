@@ -38,7 +38,6 @@ public class JwtUtils {
 				return redisService.getToken(jwt);
 			else {
 				try {
-				System.out.println(redisService);
 				Claims claim = Jwts.parser().setSigningKey(SECRET).parseClaimsJws(jwt).getBody();
 				Long id = Long.parseLong(claim.getSubject());
 				redisService.putToken(jwt, id);

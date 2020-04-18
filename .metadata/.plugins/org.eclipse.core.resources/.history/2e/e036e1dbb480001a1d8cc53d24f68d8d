@@ -1,0 +1,5 @@
+package com.bridgelabz.noteservice.config;
+
+public class NoteServiceConfig {
+
+}

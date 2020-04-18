@@ -51,7 +51,7 @@ public class UserServiceProvider implements UserService {
 	@Override
 	public void saveUser(RegistrationDTO register) {
 
-		log.info("Save User Method ===> registered with ===> "+register.getEmailAddress());
+		log.info("Save User Method");
 		if (repository.findByEmailAddress(register.getEmailAddress()).isPresent())
 			throw new UserException(HttpStatus.FOUND.value(), env.getProperty("103"));
 
@@ -78,6 +78,8 @@ public class UserServiceProvider implements UserService {
 	 */
 	@Override
 	public int updateVerificationStatus(String token) {
+		
+		log.info("updateVerificationStatus Method");
 		Long id = jwt.decodeToken(token);
 		try {
 			return repository.updateUserVerificationStatus(id, LocalDateTime.now());
@@ -93,6 +95,7 @@ public class UserServiceProvider implements UserService {
 	@Override
 	public LoginResponse loginByEmailOrMobile(LoginDTO login) {
 		
+		log.info("loginByEmailOrMobile Method");
 		User user=null;
 		boolean email = Pattern.compile("^((\"[\\w-\\s]+\")|([\\w-]+(?:\\.[\\w-]+)*)|(\"[\\w-\\s]+\")([\\w-]+(?:\\.[\\w-]+)*))(@((?:[\\w-]+\\.)*\\w[\\w-]{0,66})\\.([a-z]{2,6}(?:\\.[a-z]{2})?)$)|(@\\[?((25[0-5]\\.|2[0-4][0-9]\\.|1[0-9]{2}\\.|[0-9]{1,2}\\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\\]?$)").matcher(login.getMailOrMobile()).matches();
 		boolean mobile = Pattern.compile("^[0-9]{10}$").matcher(login.getMailOrMobile()).matches();
@@ -108,7 +111,7 @@ public class UserServiceProvider implements UserService {
 			}
 			throw new UserException(401, env.getProperty("401"));
 		}
-		return null;
+		return  new LoginResponse(HttpStatus.BAD_REQUEST.value(), env.getProperty("404"), null, null);
 	}
 
 	/**
@@ -116,6 +119,8 @@ public class UserServiceProvider implements UserService {
 	 */
 	@Override
 	public void sendTokentoMail(String emailAddress) {
+		
+		log.info("sendTokentoMail Method");
 
 		User user = repository.findByEmailAddress(emailAddress)
 				.orElseThrow(() -> new UserException(404, env.getProperty("104")));
@@ -131,8 +136,17 @@ public class UserServiceProvider implements UserService {
 	 */
 	@Override
 	public int resetPassword(String token, String newPassword) {
+		log.info("resetPassword Method");
 		Long id = jwt.decodeToken(token);
 		return repository.updatePassword(id, encoder.encode(newPassword), LocalDateTime.now());
+	}
+
+	@Override
+	public Long getUserByToken(String token) {
+		log.info("getUserByToken Method");
+		Long id = jwt.decodeToken(token);
+		User user = repository.findById(id).orElseThrow(() -> new UserException(404, env.getProperty("104")));
+		return user.getUserId();
 	}
 	
 }

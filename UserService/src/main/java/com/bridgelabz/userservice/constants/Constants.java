@@ -5,7 +5,7 @@ public class Constants {
 	
 	private Constants() {}
 	
-	public static final String URL = "http://notification-service/notification/sendMail";
+	public static final String URL = "http://localhost:8070/fundoo/notificationservice/notification/sendMail";
 	
 	public static final String REGISTRATION_STATUS = "Registration Confirmation";
 	public static final String REGISTRATION_MESSAGE = ", you have successfully Registrered to our website\nPlease click on below link to verify:\n";

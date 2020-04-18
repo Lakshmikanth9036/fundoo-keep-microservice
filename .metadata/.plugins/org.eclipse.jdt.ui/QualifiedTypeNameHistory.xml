@@ -10,7 +10,6 @@
 <fullyQualifiedTypeName name="com.bridgelabz.userservice.exception.TokenException"/>
 <fullyQualifiedTypeName name="com.bridgelabz.userservice.utils.JwtUtils"/>
 <fullyQualifiedTypeName name="com.bridgelabz.userservice.exception.UserException"/>
-<fullyQualifiedTypeName name="com.bridgelabz.userservice.entity.User"/>
 <fullyQualifiedTypeName name="com.bridgelabz.userservice.dto.Mail"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.CrossOrigin"/>
 <fullyQualifiedTypeName name="org.springframework.context.annotation.PropertySource"/>
@@ -24,9 +23,7 @@
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
 <fullyQualifiedTypeName name="com.bridgelabz.userservice.dto.LoginResponse"/>
 <fullyQualifiedTypeName name="com.bridgelabz.userservice.dto.LoginDTO"/>
-<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestParam"/>
 <fullyQualifiedTypeName name="org.springframework.cloud.netflix.eureka.server.EnableEurekaServer"/>
-<fullyQualifiedTypeName name="org.springframework.cloud.netflix.eureka.EnableEurekaClient"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RestController"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestBody"/>
@@ -41,6 +38,20 @@
 <fullyQualifiedTypeName name="org.springframework.http.ResponseEntity"/>
 <fullyQualifiedTypeName name="com.bridgelabz.userservice.dto.Response"/>
 <fullyQualifiedTypeName name="org.springframework.cloud.client.loadbalancer.LoadBalanced"/>
-<fullyQualifiedTypeName name="lombok.extern.slf4j.Slf4j"/>
 <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Value"/>
+<fullyQualifiedTypeName name="org.springframework.cloud.netflix.zuul.EnableZuulProxy"/>
+<fullyQualifiedTypeName name="org.springframework.cloud.netflix.eureka.EnableEurekaClient"/>
+<fullyQualifiedTypeName name="lombok.extern.slf4j.Slf4j"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestParam"/>
+<fullyQualifiedTypeName name="com.bridgelabz.userservice.entity.User"/>
+<fullyQualifiedTypeName name="org.springframework.context.annotation.Configuration"/>
+<fullyQualifiedTypeName name="lombok.NoArgsConstructor"/>
+<fullyQualifiedTypeName name="lombok.Data"/>
+<fullyQualifiedTypeName name="com.bridgelabz.noteservice.repository.NoteRepository"/>
+<fullyQualifiedTypeName name="com.bridgelabz.noteservice.service.NoteService"/>
+<fullyQualifiedTypeName name="com.bridgelabz.noteservice.dto.Response"/>
+<fullyQualifiedTypeName name="com.bridgelabz.noteservice.dto.NoteDTO"/>
+<fullyQualifiedTypeName name="com.bridgelabz.noteservice.dto.ReminderDTO"/>
+<fullyQualifiedTypeName name="com.bridgelabz.noteservice.entity.Note"/>
 </qualifiedTypeNameHistroy>

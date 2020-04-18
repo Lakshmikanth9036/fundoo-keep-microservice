@@ -1,0 +1,29 @@
+2020-04-17 17:33:29 [http-nio-8082-exec-1] INFO  org.apache.juli.logging.DirectJDKLog %PARSER_ERROR[x] -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-17 17:33:29 [http-nio-8082-exec-1] INFO  com.bridgelabz.notificationservice.service.MailService %PARSER_ERROR[x] -Mail service method ===> mailId kanth1997.9036@gmail.com
+2020-04-17 17:33:29 [http-nio-8082-exec-1] INFO  com.bridgelabz.notificationservice.service.MailService %PARSER_ERROR[x] -Mail service method ===> mailPassword ===> 944302432hema
+2020-04-17 17:35:14 [AsyncResolver-bootstrap-executor-0] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver %PARSER_ERROR[x] -Resolving eureka endpoints via configuration
+2020-04-17 17:40:14 [AsyncResolver-bootstrap-executor-0] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver %PARSER_ERROR[x] -Resolving eureka endpoints via configuration
+2020-04-17 17:45:14 [AsyncResolver-bootstrap-executor-0] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver %PARSER_ERROR[x] -Resolving eureka endpoints via configuration
+2020-04-17 17:48:27 [http-nio-8082-exec-2] INFO  com.bridgelabz.notificationservice.service.MailService %PARSER_ERROR[x] -Mail service method ===> mailId kanth1997.9036@gmail.com
+2020-04-17 17:48:27 [http-nio-8082-exec-2] INFO  com.bridgelabz.notificationservice.service.MailService %PARSER_ERROR[x] -Mail service method ===> mailPassword ===> 944302432hema
+2020-04-17 17:50:14 [AsyncResolver-bootstrap-executor-0] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver %PARSER_ERROR[x] -Resolving eureka endpoints via configuration
+2020-04-17 17:54:59 [http-nio-8082-exec-4] INFO  com.bridgelabz.notificationservice.service.MailService %PARSER_ERROR[x] -Mail service method ===> mailId kanth1997.9036@gmail.com
+2020-04-17 17:54:59 [http-nio-8082-exec-4] INFO  com.bridgelabz.notificationservice.service.MailService %PARSER_ERROR[x] -Mail service method ===> mailPassword ===> 944302432hema
+2020-04-17 17:55:14 [AsyncResolver-bootstrap-executor-0] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver %PARSER_ERROR[x] -Resolving eureka endpoints via configuration
+2020-04-17 18:00:14 [AsyncResolver-bootstrap-executor-0] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver %PARSER_ERROR[x] -Resolving eureka endpoints via configuration
+2020-04-17 18:05:14 [AsyncResolver-bootstrap-executor-0] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver %PARSER_ERROR[x] -Resolving eureka endpoints via configuration
+2020-04-17 18:10:14 [AsyncResolver-bootstrap-executor-0] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver %PARSER_ERROR[x] -Resolving eureka endpoints via configuration
+2020-04-17 18:15:14 [AsyncResolver-bootstrap-executor-0] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver %PARSER_ERROR[x] -Resolving eureka endpoints via configuration
+2020-04-17 19:18:11 [AsyncResolver-bootstrap-executor-0] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver %PARSER_ERROR[x] -Resolving eureka endpoints via configuration
+2020-04-17 19:23:11 [AsyncResolver-bootstrap-executor-0] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver %PARSER_ERROR[x] -Resolving eureka endpoints via configuration
+2020-04-17 19:28:11 [AsyncResolver-bootstrap-executor-0] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver %PARSER_ERROR[x] -Resolving eureka endpoints via configuration
+2020-04-17 19:33:11 [AsyncResolver-bootstrap-executor-0] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver %PARSER_ERROR[x] -Resolving eureka endpoints via configuration
+2020-04-17 19:35:16 [RMI TCP Connection(9)-127.0.0.1] WARN  com.netflix.discovery.DiscoveryClient$3 %PARSER_ERROR[x] -Saw local status change event StatusChangeEvent [timestamp=1587132316093, current=DOWN, previous=UP]
+2020-04-17 19:35:16 [DiscoveryClient-InstanceInfoReplicator-0] INFO  com.netflix.discovery.DiscoveryClient %PARSER_ERROR[x] -DiscoveryClient_NOTIFICATION-SERVICE/DESKTOP-VJE8VFV:notification-service:8082: registering service...
+2020-04-17 19:35:16 [DiscoveryClient-InstanceInfoReplicator-0] INFO  com.netflix.discovery.DiscoveryClient %PARSER_ERROR[x] -DiscoveryClient_NOTIFICATION-SERVICE/DESKTOP-VJE8VFV:notification-service:8082 - registration status: 204
+2020-04-17 19:35:17 [RMI TCP Connection(9)-127.0.0.1] INFO  com.netflix.discovery.DiscoveryClient %PARSER_ERROR[x] -Shutting down DiscoveryClient ...
+2020-04-17 19:35:20 [RMI TCP Connection(9)-127.0.0.1] INFO  com.netflix.discovery.DiscoveryClient %PARSER_ERROR[x] -Unregistering ...
+2020-04-17 19:35:20 [RMI TCP Connection(9)-127.0.0.1] INFO  com.netflix.discovery.DiscoveryClient %PARSER_ERROR[x] -DiscoveryClient_NOTIFICATION-SERVICE/DESKTOP-VJE8VFV:notification-service:8082 - deregister  status: 200
+2020-04-17 19:35:20 [RMI TCP Connection(9)-127.0.0.1] INFO  com.netflix.discovery.DiscoveryClient %PARSER_ERROR[x] -Completed shut down of DiscoveryClient
+2020-04-17 19:35:20 [RMI TCP Connection(9)-127.0.0.1] INFO  org.apache.juli.logging.DirectJDKLog %PARSER_ERROR[x] -Stopping service [Tomcat]
+2020-04-17 19:35:20 [RMI TCP Connection(9)-127.0.0.1] INFO  org.apache.juli.logging.DirectJDKLog %PARSER_ERROR[x] -Destroying Spring FrameworkServlet 'dispatcherServlet'

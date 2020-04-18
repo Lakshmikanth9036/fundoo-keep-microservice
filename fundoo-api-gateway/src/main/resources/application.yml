@@ -4,7 +4,7 @@ zuul:
   prefix: /fundoo
   routes:    user-service:
       path: /userservice/**
-      service-id: user-service
+      service-id: user-service    note-service:      path: /noteservice/**      service-id: note-service    notification-service:      path: /notificationservice/**      service-id: notification-service
       
 eureka:
   client:
