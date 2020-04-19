@@ -6,5 +6,5 @@ public class Constants {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public static final String USER_EXIST_URL = "http://user-service/user/userExist";
+	public static final String USER_EXIST_URL = "http://fundoo-api-gateway/fundoo/userservice/user/userExist";
 }

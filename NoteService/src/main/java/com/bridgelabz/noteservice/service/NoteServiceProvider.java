@@ -412,7 +412,7 @@ public class NoteServiceProvider implements NoteService {
 //		}
 //		return new Response(HttpStatus.ALREADY_REPORTED.value(), env.getProperty("106"), labelDTO);
 //	}
-//
+
 //	/**
 //	 * Remove the perticular label from the note
 //	 */
@@ -435,44 +435,7 @@ public class NoteServiceProvider implements NoteService {
 //		}
 //		return new Response(HttpStatus.NOT_FOUND.value(), env.getProperty("107"));
 //	}
-//
-//	/**
-//	 * Search by title and description
-//	 * @param text title or description
-//	 * @return list of notes the match's the text
-//	 */
-//	public List<Note> getNoteByTitleAndDescription(String text) {
-//		SearchRequest searchRequest = new SearchRequest();
-//		searchRequest.indices(Constants.INDEX);
-//		searchRequest.types(Constants.TYPE);
-//		SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
-//		QueryBuilder query = QueryBuilders.boolQuery()
-//				.should(QueryBuilders.queryStringQuery(text).lenient(true).field("title").field("description"))
-//				.should(QueryBuilders.queryStringQuery("*" + text + "*").lenient(true).field("title")
-//						.field("description"));
-//		searchSourceBuilder.query(query);
-//		searchRequest.source(searchSourceBuilder);
-//		SearchResponse searchResponse = null;
-//		try {
-//			searchResponse = client.search(searchRequest, RequestOptions.DEFAULT);
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		}
-//		return getSearchResult(searchResponse);
-//	}
-//
-//	private List<Note> getSearchResult(SearchResponse response) {
-//
-//		SearchHit[] searchHit = response.getHits().getHits();
-//
-//		List<Note> notes = new ArrayList<>();
-//
-//		for (SearchHit hit : searchHit) {
-//			notes.add(objectMapper.convertValue(hit.getSourceAsMap(), Note.class));
-//		}
-//		return notes;
-//	}
-//	
+
 	private List<Note> getNoteById(String token){
 		log.info("Get Note By Id Method");
 		log.info(token);
@@ -487,16 +450,5 @@ public class NoteServiceProvider implements NoteService {
 		}
 		
 	}
-//	
-//	private void updateNoteInES(Note filteredNote) {
-//		UpdateRequest updateRequest = new UpdateRequest(Constants.INDEX, Constants.TYPE,
-//				String.valueOf(filteredNote.getNoteId()));
-//		updateRequest.doc(objectMapper.convertValue(filteredNote, Map.class));
-//		try {
-//			client.update(updateRequest, RequestOptions.DEFAULT);
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		}
-//	}
 
 }

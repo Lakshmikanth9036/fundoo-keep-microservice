@@ -23,6 +23,9 @@ public class Label {
 	@Column(name = "LabelId")
 	private Long labelId;
 	
+	@Column(name = "UserId")
+	private Long userId;
+	
 	@Column(name = "LabelName", unique = true)
 	private String labelName;
 	

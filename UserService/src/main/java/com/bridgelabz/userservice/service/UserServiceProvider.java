@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -38,10 +37,10 @@ public class UserServiceProvider implements UserService {
 
 	@Autowired
 	private Environment env;
-	
+
 	@Autowired
 	private JwtUtils jwt;
-	
+
 	@Autowired
 	private RestTemplate restTemplate;
 
@@ -74,11 +73,12 @@ public class UserServiceProvider implements UserService {
 
 	/**
 	 * Update the user verification status if the received token is valid
+	 * 
 	 * @return integer value that is number of record that had been updated
 	 */
 	@Override
 	public int updateVerificationStatus(String token) {
-		
+
 		log.info("updateVerificationStatus Method");
 		Long id = jwt.decodeToken(token);
 		try {
@@ -90,20 +90,26 @@ public class UserServiceProvider implements UserService {
 
 	/**
 	 * Login to the application using login credential
+	 * 
 	 * @return user details which is necessary
 	 */
 	@Override
 	public LoginResponse loginByEmailOrMobile(LoginDTO login) {
-		
-		log.info("loginByEmailOrMobile Method");
-		User user=null;
-		boolean email = Pattern.compile("^((\"[\\w-\\s]+\")|([\\w-]+(?:\\.[\\w-]+)*)|(\"[\\w-\\s]+\")([\\w-]+(?:\\.[\\w-]+)*))(@((?:[\\w-]+\\.)*\\w[\\w-]{0,66})\\.([a-z]{2,6}(?:\\.[a-z]{2})?)$)|(@\\[?((25[0-5]\\.|2[0-4][0-9]\\.|1[0-9]{2}\\.|[0-9]{1,2}\\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\\]?$)").matcher(login.getMailOrMobile()).matches();
-		boolean mobile = Pattern.compile("^[0-9]{10}$").matcher(login.getMailOrMobile()).matches();
-		Long mbl = mobile ? Long.parseLong(login.getMailOrMobile()) : 0; 
-		user = email ? repository.findByEmailAddress(login.getMailOrMobile()).orElseThrow(() -> new UserException(404, env.getProperty("104"))) :
-			   mobile ? repository.findByMobile(mbl).orElseThrow(() -> new UserException(404, env.getProperty("104"))) : null;
 
-		if (user.isUserVerified() && user !=null) {
+		log.info("loginByEmailOrMobile Method");
+		User user = null;
+		boolean email = Pattern.compile(
+				"^((\"[\\w-\\s]+\")|([\\w-]+(?:\\.[\\w-]+)*)|(\"[\\w-\\s]+\")([\\w-]+(?:\\.[\\w-]+)*))(@((?:[\\w-]+\\.)*\\w[\\w-]{0,66})\\.([a-z]{2,6}(?:\\.[a-z]{2})?)$)|(@\\[?((25[0-5]\\.|2[0-4][0-9]\\.|1[0-9]{2}\\.|[0-9]{1,2}\\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\\]?$)")
+				.matcher(login.getMailOrMobile()).matches();
+		boolean mobile = Pattern.compile("^[0-9]{10}$").matcher(login.getMailOrMobile()).matches();
+		Long mbl = mobile ? Long.parseLong(login.getMailOrMobile()) : 0;
+		user = email
+				? repository.findByEmailAddress(login.getMailOrMobile())
+						.orElseThrow(() -> new UserException(404, env.getProperty("104")))
+				: mobile ? repository.findByMobile(mbl)
+						.orElseThrow(() -> new UserException(404, env.getProperty("104"))) : null;
+
+		if (user.isUserVerified() && user != null) {
 			if (encoder.matches(login.getPassword(), user.getPassword())) {
 				user.setPassword(null);
 				return new LoginResponse(HttpStatus.OK.value(), env.getProperty("202"), user,
@@ -111,7 +117,7 @@ public class UserServiceProvider implements UserService {
 			}
 			throw new UserException(401, env.getProperty("401"));
 		}
-		return  new LoginResponse(HttpStatus.BAD_REQUEST.value(), env.getProperty("404"), null, null);
+		return new LoginResponse(HttpStatus.BAD_REQUEST.value(), env.getProperty("404"), null, null);
 	}
 
 	/**
@@ -119,7 +125,7 @@ public class UserServiceProvider implements UserService {
 	 */
 	@Override
 	public void sendTokentoMail(String emailAddress) {
-		
+
 		log.info("sendTokentoMail Method");
 
 		User user = repository.findByEmailAddress(emailAddress)
@@ -148,5 +154,5 @@ public class UserServiceProvider implements UserService {
 		User user = repository.findById(id).orElseThrow(() -> new UserException(404, env.getProperty("104")));
 		return user.getUserId();
 	}
-	
+
 }
