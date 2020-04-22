@@ -1,0 +1,50 @@
+2020-04-21 12:23:07 [http-nio-8081-exec-1] INFO  org.apache.juli.logging.DirectJDKLog %PARSER_ERROR[x] -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-21 12:23:07 [http-nio-8081-exec-1] INFO  com.bridgelabz.userservice.service.UserServiceProvider %PARSER_ERROR[x] -getUserByToken Method
+2020-04-21 12:23:58 [AsyncResolver-bootstrap-executor-0] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver %PARSER_ERROR[x] -Resolving eureka endpoints via configuration
+2020-04-21 12:25:51 [http-nio-8081-exec-3] INFO  com.bridgelabz.userservice.service.UserServiceProvider %PARSER_ERROR[x] -getUserByToken Method
+2020-04-21 12:28:51 [http-nio-8081-exec-5] INFO  com.bridgelabz.userservice.service.UserServiceProvider %PARSER_ERROR[x] -getUserByToken Method
+2020-04-21 12:28:58 [AsyncResolver-bootstrap-executor-0] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver %PARSER_ERROR[x] -Resolving eureka endpoints via configuration
+2020-04-21 12:30:24 [http-nio-8081-exec-7] INFO  com.bridgelabz.userservice.service.UserServiceProvider %PARSER_ERROR[x] -getUserByToken Method
+2020-04-21 12:31:50 [http-nio-8081-exec-9] INFO  com.bridgelabz.userservice.service.UserServiceProvider %PARSER_ERROR[x] -getUserByToken Method
+2020-04-21 12:33:58 [AsyncResolver-bootstrap-executor-0] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver %PARSER_ERROR[x] -Resolving eureka endpoints via configuration
+2020-04-21 12:34:04 [http-nio-8081-exec-1] INFO  com.bridgelabz.userservice.service.UserServiceProvider %PARSER_ERROR[x] -getUserByToken Method
+2020-04-21 12:35:22 [http-nio-8081-exec-3] INFO  com.bridgelabz.userservice.service.UserServiceProvider %PARSER_ERROR[x] -getUserByToken Method
+2020-04-21 12:38:58 [AsyncResolver-bootstrap-executor-0] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver %PARSER_ERROR[x] -Resolving eureka endpoints via configuration
+2020-04-21 12:43:58 [AsyncResolver-bootstrap-executor-0] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver %PARSER_ERROR[x] -Resolving eureka endpoints via configuration
+2020-04-21 12:47:25 [http-nio-8081-exec-5] INFO  com.bridgelabz.userservice.service.UserServiceProvider %PARSER_ERROR[x] -getUserByToken Method
+2020-04-21 12:48:58 [AsyncResolver-bootstrap-executor-0] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver %PARSER_ERROR[x] -Resolving eureka endpoints via configuration
+2020-04-21 12:53:58 [AsyncResolver-bootstrap-executor-0] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver %PARSER_ERROR[x] -Resolving eureka endpoints via configuration
+2020-04-21 12:58:58 [AsyncResolver-bootstrap-executor-0] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver %PARSER_ERROR[x] -Resolving eureka endpoints via configuration
+2020-04-21 13:03:59 [AsyncResolver-bootstrap-executor-0] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver %PARSER_ERROR[x] -Resolving eureka endpoints via configuration
+2020-04-21 13:08:59 [AsyncResolver-bootstrap-executor-0] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver %PARSER_ERROR[x] -Resolving eureka endpoints via configuration
+2020-04-21 13:14:00 [AsyncResolver-bootstrap-executor-0] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver %PARSER_ERROR[x] -Resolving eureka endpoints via configuration
+2020-04-21 13:15:40 [http-nio-8081-exec-7] INFO  com.bridgelabz.userservice.service.UserServiceProvider %PARSER_ERROR[x] -getUserByToken Method
+2020-04-21 13:17:21 [http-nio-8081-exec-9] INFO  com.bridgelabz.userservice.service.UserServiceProvider %PARSER_ERROR[x] -getUserByToken Method
+2020-04-21 13:17:36 [http-nio-8081-exec-10] INFO  com.bridgelabz.userservice.service.UserServiceProvider %PARSER_ERROR[x] -getUserByToken Method
+2020-04-21 13:19:00 [AsyncResolver-bootstrap-executor-0] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver %PARSER_ERROR[x] -Resolving eureka endpoints via configuration
+2020-04-21 13:24:00 [AsyncResolver-bootstrap-executor-0] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver %PARSER_ERROR[x] -Resolving eureka endpoints via configuration
+2020-04-21 13:25:53 [http-nio-8081-exec-2] INFO  com.bridgelabz.userservice.service.UserServiceProvider %PARSER_ERROR[x] -getUserByToken Method
+2020-04-21 13:26:45 [http-nio-8081-exec-3] INFO  com.bridgelabz.userservice.service.UserServiceProvider %PARSER_ERROR[x] -getUserByToken Method
+2020-04-21 13:29:00 [AsyncResolver-bootstrap-executor-0] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver %PARSER_ERROR[x] -Resolving eureka endpoints via configuration
+2020-04-21 13:30:22 [http-nio-8081-exec-5] INFO  com.bridgelabz.userservice.service.UserServiceProvider %PARSER_ERROR[x] -getUserByToken Method
+2020-04-21 13:34:00 [AsyncResolver-bootstrap-executor-0] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver %PARSER_ERROR[x] -Resolving eureka endpoints via configuration
+2020-04-21 15:28:28 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool$HouseKeeper %PARSER_ERROR[x] -HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h50m6s97ms63µs400ns).
+2020-04-21 15:28:36 [AsyncResolver-bootstrap-executor-0] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver %PARSER_ERROR[x] -Resolving eureka endpoints via configuration
+2020-04-21 15:33:36 [AsyncResolver-bootstrap-executor-0] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver %PARSER_ERROR[x] -Resolving eureka endpoints via configuration
+2020-04-21 15:36:20 [http-nio-8081-exec-7] INFO  com.bridgelabz.userservice.service.UserServiceProvider %PARSER_ERROR[x] -getUserByToken Method
+2020-04-21 15:36:36 [http-nio-8081-exec-8] INFO  com.bridgelabz.userservice.service.UserServiceProvider %PARSER_ERROR[x] -getUserByToken Method
+2020-04-21 15:38:09 [http-nio-8081-exec-10] INFO  com.bridgelabz.userservice.service.UserServiceProvider %PARSER_ERROR[x] -getUserByToken Method
+2020-04-21 15:38:36 [AsyncResolver-bootstrap-executor-0] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver %PARSER_ERROR[x] -Resolving eureka endpoints via configuration
+2020-04-21 15:40:39 [http-nio-8081-exec-2] INFO  com.bridgelabz.userservice.service.UserServiceProvider %PARSER_ERROR[x] -getUserByToken Method
+2020-04-21 15:43:36 [AsyncResolver-bootstrap-executor-0] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver %PARSER_ERROR[x] -Resolving eureka endpoints via configuration
+2020-04-21 15:46:18 [RMI TCP Connection(16)-127.0.0.1] WARN  com.netflix.discovery.DiscoveryClient$3 %PARSER_ERROR[x] -Saw local status change event StatusChangeEvent [timestamp=1587464178542, current=DOWN, previous=UP]
+2020-04-21 15:46:18 [DiscoveryClient-InstanceInfoReplicator-0] INFO  com.netflix.discovery.DiscoveryClient %PARSER_ERROR[x] -DiscoveryClient_USER-SERVICE/DESKTOP-VJE8VFV:user-service:8081: registering service...
+2020-04-21 15:46:18 [DiscoveryClient-InstanceInfoReplicator-0] INFO  com.netflix.discovery.DiscoveryClient %PARSER_ERROR[x] -DiscoveryClient_USER-SERVICE/DESKTOP-VJE8VFV:user-service:8081 - registration status: 204
+2020-04-21 15:46:19 [RMI TCP Connection(16)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource %PARSER_ERROR[x] -HikariPool-1 - Shutdown initiated...
+2020-04-21 15:46:19 [RMI TCP Connection(16)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource %PARSER_ERROR[x] -HikariPool-1 - Shutdown completed.
+2020-04-21 15:46:19 [RMI TCP Connection(16)-127.0.0.1] INFO  com.netflix.discovery.DiscoveryClient %PARSER_ERROR[x] -Shutting down DiscoveryClient ...
+2020-04-21 15:46:23 [RMI TCP Connection(16)-127.0.0.1] INFO  com.netflix.discovery.DiscoveryClient %PARSER_ERROR[x] -Unregistering ...
+2020-04-21 15:46:23 [RMI TCP Connection(16)-127.0.0.1] INFO  com.netflix.discovery.DiscoveryClient %PARSER_ERROR[x] -DiscoveryClient_USER-SERVICE/DESKTOP-VJE8VFV:user-service:8081 - deregister  status: 200
+2020-04-21 15:46:23 [RMI TCP Connection(16)-127.0.0.1] INFO  com.netflix.discovery.DiscoveryClient %PARSER_ERROR[x] -Completed shut down of DiscoveryClient
+2020-04-21 15:46:23 [RMI TCP Connection(16)-127.0.0.1] INFO  org.apache.juli.logging.DirectJDKLog %PARSER_ERROR[x] -Stopping service [Tomcat]
+2020-04-21 15:46:23 [RMI TCP Connection(16)-127.0.0.1] INFO  org.apache.juli.logging.DirectJDKLog %PARSER_ERROR[x] -Destroying Spring FrameworkServlet 'dispatcherServlet'

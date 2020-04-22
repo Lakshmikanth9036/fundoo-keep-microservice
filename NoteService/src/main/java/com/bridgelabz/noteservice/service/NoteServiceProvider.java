@@ -1,8 +1,6 @@
 package com.bridgelabz.noteservice.service;
 
-import java.io.IOException;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
@@ -14,19 +12,23 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
-import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import com.bridgelabz.noteservice.constants.Constants;
+import com.bridgelabz.noteservice.dto.LabelDTO;
 import com.bridgelabz.noteservice.dto.NoteDTO;
 import com.bridgelabz.noteservice.dto.ReminderDTO;
 import com.bridgelabz.noteservice.dto.Response;
+import com.bridgelabz.noteservice.entity.Label;
 import com.bridgelabz.noteservice.entity.Note;
 import com.bridgelabz.noteservice.exception.NoteException;
+import com.bridgelabz.noteservice.repository.LabelRepository;
 import com.bridgelabz.noteservice.repository.NoteRepository;
+import com.bridgelabz.noteservice.repository.RedisService;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -39,10 +41,19 @@ public class NoteServiceProvider implements NoteService {
 	private NoteRepository noteRepository;
 
 	@Autowired
+	private LabelRepository labelRepository;
+
+	@Autowired
+	private RedisService redisService;
+
+	@Autowired
 	private Environment env;
 
 	@Autowired
 	private RestTemplate restTemplate;
+	
+	@Autowired
+	private ObjectMapper objectMapper;
 
 	/**
 	 * Creates a new note
@@ -59,6 +70,7 @@ public class NoteServiceProvider implements NoteService {
 			Note note = new Note(noteDTO);
 			note.setUserId(uId);
 			noteRepository.save(note);
+			redisService.save(note, uId);
 		} else {
 			throw new NoteException(404, env.getProperty("104"));
 		}
@@ -76,7 +88,7 @@ public class NoteServiceProvider implements NoteService {
 				Response.class, token);
 
 		if (res.getStatusCode().value() == 200) {
-
+			Long uId = Long.parseLong(res.getBody().getObj().toString());
 			Note filteredNote = noteRepository.findById(noteId)
 					.orElseThrow(() -> new NoteException(404, env.getProperty("105")));
 			filteredNote.setTitle(noteDTO.getTitle());
@@ -84,6 +96,7 @@ public class NoteServiceProvider implements NoteService {
 			filteredNote.setColor(noteDTO.getColor());
 			filteredNote.setNoteUpdated(LocalDateTime.now());
 			noteRepository.save(filteredNote);
+			redisService.save(filteredNote, uId);
 		} else {
 			throw new NoteException(404, env.getProperty("104"));
 		}
@@ -102,11 +115,12 @@ public class NoteServiceProvider implements NoteService {
 				Response.class, token);
 
 		if (res.getStatusCode().value() == 200) {
-
+			Long uId = Long.parseLong(res.getBody().getObj().toString());
 			Note filteredNote = noteRepository.findById(noteId)
 					.orElseThrow(() -> new NoteException(404, env.getProperty("105")));
 
 			noteRepository.delete(filteredNote);
+			redisService.delete(uId, noteId);
 		} else {
 			throw new NoteException(404, env.getProperty("104"));
 		}
@@ -124,13 +138,14 @@ public class NoteServiceProvider implements NoteService {
 				Response.class, token);
 
 		if (res.getStatusCode().value() == 200) {
-
+			Long uId = Long.parseLong(res.getBody().getObj().toString());
 			Note filteredNote = noteRepository.findById(noteId)
 					.orElseThrow(() -> new NoteException(404, env.getProperty("105")));
 			filteredNote.setTrash(!filteredNote.isTrash());
 			filteredNote.setPin(false);
 			filteredNote.setNoteUpdated(LocalDateTime.now());
 			noteRepository.save(filteredNote);
+			redisService.save(filteredNote, uId);
 		} else {
 			throw new NoteException(404, env.getProperty("104"));
 		}
@@ -148,13 +163,14 @@ public class NoteServiceProvider implements NoteService {
 				Response.class, token);
 
 		if (res.getStatusCode().value() == 200) {
-
+			Long uId = Long.parseLong(res.getBody().getObj().toString());
 			Note filteredNote = noteRepository.findById(noteId)
 					.orElseThrow(() -> new NoteException(404, env.getProperty("105")));
 			filteredNote.setArchived(!filteredNote.isArchived());
 			filteredNote.setPin(false);
 			filteredNote.setNoteUpdated(LocalDateTime.now());
 			noteRepository.save(filteredNote);
+			redisService.save(filteredNote, uId);
 		} else {
 			throw new NoteException(404, env.getProperty("104"));
 		}
@@ -172,13 +188,14 @@ public class NoteServiceProvider implements NoteService {
 				Response.class, token);
 
 		if (res.getStatusCode().value() == 200) {
-
+			Long uId = Long.parseLong(res.getBody().getObj().toString());
 			Note filteredNote = noteRepository.findById(noteId)
 					.orElseThrow(() -> new NoteException(404, env.getProperty("105")));
 			filteredNote.setPin(!filteredNote.isPin());
 			filteredNote.setArchived(false);
 			filteredNote.setNoteUpdated(LocalDateTime.now());
 			noteRepository.save(filteredNote);
+			redisService.save(filteredNote, uId);
 		} else {
 			throw new NoteException(404, env.getProperty("104"));
 		}
@@ -196,12 +213,13 @@ public class NoteServiceProvider implements NoteService {
 				Response.class, token);
 
 		if (res.getStatusCode().value() == 200) {
-
+			Long uId = Long.parseLong(res.getBody().getObj().toString());
 			Note filteredNote = noteRepository.findById(noteId)
 					.orElseThrow(() -> new NoteException(404, env.getProperty("105")));
 			filteredNote.setColor(color);
 			filteredNote.setNoteUpdated(LocalDateTime.now());
 			noteRepository.save(filteredNote);
+			redisService.save(filteredNote, uId);
 		} else {
 			throw new NoteException(404, env.getProperty("104"));
 		}
@@ -223,12 +241,13 @@ public class NoteServiceProvider implements NoteService {
 				Response.class, token);
 
 		if (res.getStatusCode().value() == 200) {
-
+			Long uId = Long.parseLong(res.getBody().getObj().toString());
 			Note filteredNote = noteRepository.findById(noteId)
 					.orElseThrow(() -> new NoteException(404, env.getProperty("105")));
 			filteredNote.setReminder(remainder.getReminder());
 			filteredNote.setNoteUpdated(LocalDateTime.now());
 			noteRepository.save(filteredNote);
+			redisService.save(filteredNote, uId);
 		} else {
 			throw new NoteException(404, env.getProperty("104"));
 		}
@@ -237,52 +256,55 @@ public class NoteServiceProvider implements NoteService {
 
 	/**
 	 * Remove the remainder from note
-	 * @param token jwt that contains user token
+	 * 
+	 * @param token  jwt that contains user token
 	 * @param noteId note id from which we need to remove remainder
 	 */
 	@Transactional
 	public void removeReminder(String token, Long noteId) {
-		
+
 		log.info("Remove Reminder method");
 		log.info(token);
 		ResponseEntity<Response> res = restTemplate.getForEntity(Constants.USER_EXIST_URL + "?token={token}",
 				Response.class, token);
 
 		if (res.getStatusCode().value() == 200) {
-
+			Long uId = Long.parseLong(res.getBody().getObj().toString());
 			Note filteredNote = noteRepository.findById(noteId)
 					.orElseThrow(() -> new NoteException(404, env.getProperty("105")));
 			filteredNote.setReminder(null);
 			filteredNote.setNoteUpdated(LocalDateTime.now());
 			noteRepository.save(filteredNote);
+			redisService.save(filteredNote, uId);
 		} else {
 			throw new NoteException(404, env.getProperty("104"));
 		}
 	}
-	
+
 	/**
 	 * Get all remainder notes
+	 * 
 	 * @param token jwt that contains user token
 	 * @return all notes that have remainder
 	 */
-	public List<Note> getReminderNotes(String token){
-		
+	public List<Note> getReminderNotes(String token) {
+
 		log.info("Get Remainder Notes method");
 		log.info(token);
 		List<Note> notes = getNoteById(token);
 		List<Note> filteredNotes = new LinkedList<>();
 		notes.forEach(note -> {
-			if (!note.isTrash() && note.getReminder()!=null)
+			if (!note.isTrash() && note.getReminder() != null)
 				filteredNotes.add(note);
 		});
 		return filteredNotes;
 	}
-	
+
 	/**
 	 * Get all notes user have
 	 */
 	public List<Note> getAllNotes(String token) {
-		
+
 		log.info("Get All Notes method");
 		log.info(token);
 		List<Note> notes = getNoteById(token);
@@ -298,7 +320,7 @@ public class NoteServiceProvider implements NoteService {
 	 * To get all the pinned notes
 	 */
 	public List<Note> getPinnedNotes(String token) {
-		
+
 		log.info("Get Pinned Notes method");
 		log.info(token);
 		List<Note> notes = getNoteById(token);
@@ -314,7 +336,7 @@ public class NoteServiceProvider implements NoteService {
 	 * To get all of the archive notes
 	 */
 	public List<Note> getArchivedNotes(String token) {
-		
+
 		log.info("Get Archive Notes method");
 		log.info(token);
 		List<Note> notes = getNoteById(token);
@@ -330,7 +352,7 @@ public class NoteServiceProvider implements NoteService {
 	 * To get all of the trash notes
 	 */
 	public List<Note> getTrashNotes(String token) {
-		
+
 		log.info("Get Trash Notes method");
 		log.info(token);
 		List<Note> notes = getNoteById(token);
@@ -353,7 +375,7 @@ public class NoteServiceProvider implements NoteService {
 
 		List<Note> sortedNote = notes.parallelStream().sorted(Comparator.comparing(Note::getTitle))
 				.collect(Collectors.toList());
-		
+
 		return sortedNote;
 	}
 
@@ -361,7 +383,7 @@ public class NoteServiceProvider implements NoteService {
 	 * Get all notes sorted by created time
 	 */
 	public List<Note> sortByDateAndTime(String token) {
-		
+
 		log.info("Get Notes Sorted By Date&Time method");
 		log.info(token);
 		List<Note> notes = getNoteById(token);
@@ -372,83 +394,106 @@ public class NoteServiceProvider implements NoteService {
 		return sotedNote;
 	}
 
-//	/**
-//	 * Add or create a label for the note
-//	 */
-//	public Response addOrCreateLable(String token, Long noteId, LabelDTO labelDTO) {
-//		Long uId = jwt.decodeToken(token);
-//		Label lb = new Label(labelDTO);
-//		User user = repository.findById(uId).orElseThrow(() -> new UserException(404, env.getProperty("104")));
-//		Note filteredNote = user.getNotes().stream().filter(note -> note.getNoteId().equals(noteId)).findFirst()
-//				.orElseThrow(() -> new NoteException(404, "105"));
-//		boolean exist = filteredNote.getLabels().stream()
-//				.noneMatch(lbl -> lbl.getLabelName().equalsIgnoreCase(labelDTO.getLabelName()));
-//		if (exist) {
-//			boolean exst = user.getLabels().stream()
-//					.noneMatch(lbl -> lbl.getLabelName().equalsIgnoreCase(labelDTO.getLabelName()));
-//			if (exst) {
-//				user.getLabels().add(lb);
-//				filteredNote.getLabels().add(lb);
-//				filteredNote.setNoteUpdated(LocalDateTime.now());
-//				lb.getNotes().add(filteredNote);
-//				repository.save(user);
-//				
-//				updateNoteInES(filteredNote);
-//				
-//				return new Response(HttpStatus.OK.value(), env.getProperty("209"), labelDTO);
-//			} else {
-//				Label l = user.getLabels().stream()
-//						.filter(lbl -> lbl.getLabelName().equalsIgnoreCase(labelDTO.getLabelName())).findFirst()
-//						.orElseThrow(() -> new NoteException(404, "Label Doesnt exists"));
-//				filteredNote.getLabels().add(l);
-//				filteredNote.setNoteUpdated(LocalDateTime.now());
-//				l.getNotes().add(filteredNote);
-//				repository.save(user);
-//				
-//				updateNoteInES(filteredNote);
-//				
-//				return new Response(HttpStatus.OK.value(), env.getProperty("210"), labelDTO);
-//			}
-//		}
-//		return new Response(HttpStatus.ALREADY_REPORTED.value(), env.getProperty("106"), labelDTO);
-//	}
+	/**
+	 * Add or create a label for the note
+	 */
+	public Response addOrCreateLable(String token, Long noteId, LabelDTO labelDTO) {
 
-//	/**
-//	 * Remove the perticular label from the note
-//	 */
-//	@Transactional
-//	public Response removeLabel(String token, Long noteId, Long labelId) {
-//		Long uId = jwt.decodeToken(token);
-//		User user = repository.findById(uId).orElseThrow(() -> new UserException(404, env.getProperty("104")));
-//		Note filteredNote = user.getNotes().stream().filter(note -> note.getNoteId().equals(noteId)).findFirst()
-//				.orElseThrow(() -> new NoteException(404, "105"));
-//		List<Label> labels = filteredNote.getLabels();
-//		Label label = filteredNote.getLabels().stream().filter(lbl -> lbl.getLabelId().equals(labelId)).findFirst()
-//				.orElse(null);
-//		if (label != null) {
-//			labels.remove(label);
-//			filteredNote.setNoteUpdated(LocalDateTime.now());
-//			noteRepository.save(filteredNote);
-//			repository.save(user);
-//			updateNoteInES(filteredNote);
-//			return new Response(HttpStatus.OK.value(), env.getProperty("211"));
-//		}
-//		return new Response(HttpStatus.NOT_FOUND.value(), env.getProperty("107"));
-//	}
+		log.info("Add or Create Label Method");
+		log.info(token + " " + noteId);
+		ResponseEntity<Response> res = restTemplate.getForEntity(Constants.USER_EXIST_URL + "?token={token}",
+				Response.class, token);
+		if (res.getStatusCode().value() == 200) {
+			Long uId = Long.parseLong(res.getBody().getObj().toString());
+			Label lb = new Label(labelDTO);
+			lb.setUserId(uId);
+			Note filteredNote = noteRepository.findById(noteId).orElseThrow(() -> new NoteException(404, "105"));
+			boolean exist = filteredNote.getLabels().stream()
+					.noneMatch(lbl -> lbl.getLabelName().equalsIgnoreCase(labelDTO.getLabelName()));
+			if (exist) {
+				boolean exst = labelRepository.findAllByUserId(uId).stream()
+						.noneMatch(lbl -> lbl.getLabelName().equalsIgnoreCase(labelDTO.getLabelName()));
+				if (exst) {
+					lb.getNotes().add(filteredNote);
+					labelRepository.save(lb);
+					filteredNote.getLabels().add(lb);
+					filteredNote.setNoteUpdated(LocalDateTime.now());
+					noteRepository.save(filteredNote);
+					redisService.save(filteredNote, uId);
+					return new Response(HttpStatus.OK.value(), env.getProperty("209"), labelDTO);
+				} else {
+					Label l = labelRepository.findByLabelName(labelDTO.getLabelName());
+					l.getNotes().add(filteredNote);
+					labelRepository.save(l);
+					filteredNote.getLabels().add(l);
+					filteredNote.setNoteUpdated(LocalDateTime.now());
+					noteRepository.save(filteredNote);
+					redisService.save(filteredNote, uId);
+					return new Response(HttpStatus.OK.value(), env.getProperty("210"), labelDTO);
+				}
+			}
+			return new Response(HttpStatus.ALREADY_REPORTED.value(), env.getProperty("106"), labelDTO);
+		} else {
+			throw new NoteException(404, env.getProperty("104"));
+		}
+	}
 
-	private List<Note> getNoteById(String token){
+	/**
+	 * Remove the perticular label from the note
+	 */
+	@Transactional
+	public Response removeLabel(String token, Long noteId, Long labelId) {
+
+		log.info("Add or Create Label Method");
+		log.info(token + " " + noteId);
+		ResponseEntity<Response> res = restTemplate.getForEntity(Constants.USER_EXIST_URL + "?token={token}",
+				Response.class, token);
+		if (res.getStatusCode().value() == 200) {
+			Long uId = Long.parseLong(res.getBody().getObj().toString());
+			Note filteredNote = noteRepository.findById(noteId).orElseThrow(() -> new NoteException(404, "105"));
+			List<Label> labels = filteredNote.getLabels();
+			Label label = filteredNote.getLabels().stream().filter(lbl -> lbl.getLabelId().equals(labelId)).findFirst()
+					.orElse(null);
+			if (label != null) {
+				labels.remove(label);
+				filteredNote.setNoteUpdated(LocalDateTime.now());
+				noteRepository.save(filteredNote);
+				redisService.save(filteredNote, uId);
+				return new Response(HttpStatus.OK.value(), env.getProperty("211"));
+			}
+			return new Response(HttpStatus.NOT_FOUND.value(), env.getProperty("107"));
+		}
+
+		else {
+			throw new NoteException(404, env.getProperty("104"));
+		}
+	}
+
+	private List<Note> getNoteById(String token) {
 		log.info("Get Note By Id Method");
 		log.info(token);
 		ResponseEntity<Response> res = restTemplate.getForEntity(Constants.USER_EXIST_URL + "?token={token}",
 				Response.class, token);
 		if (res.getStatusCode().value() == 200) {
 			Long uId = Long.parseLong(res.getBody().getObj().toString());
-			List<Note> userNotes = noteRepository.findByUserId(uId);
-			return userNotes;
+			if (redisService.findAll(uId).size() > 0) {
+				log.info("Get Notes through redis");
+//				log.info(redisService.findAll(uId)+"");
+				return redisService.findAll(uId);
+			} else {
+				log.info("Get Notes through db");
+				
+				List<Note> userNotes = noteRepository.findByUserId(uId);
+				userNotes.forEach(note -> {
+//					Map<String, Object> documentMapper = objectMapper.convertValue(note, Map.class);
+					redisService.save(note, uId);
+				});
+				return userNotes;
+			}
 		} else {
 			throw new NoteException(404, env.getProperty("104"));
 		}
-		
+
 	}
 
 }

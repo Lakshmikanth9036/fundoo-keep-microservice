@@ -9,10 +9,10 @@ import com.bridgelabz.noteservice.entity.Note;
 
 public interface LabelService {
 
-//	public Response createLabel(String token, LabelDTO labelDTO);
-//	public void updateLabel(String token,  LabelDTO labelDTO, Long lId);
-//	public void deleteLabel(String token, Long lId);
-//	public List<Label> getAllLables(String token);
-//	public List<Note> getNoteByLabel(String token, Long lid);
+	public Response createLabel(String token, LabelDTO labelDTO);
+	public void updateLabel(String token,  LabelDTO labelDTO, Long lId);
+	public void deleteLabel(String token, Long lId);
+	public List<Label> getAllLables(String token);
+	public List<Note> getNoteByLabel(String token, Long lid);
 	
 }

@@ -1,0 +1,160 @@
+2020-04-21 10:38:28 [http-nio-8083-exec-1] INFO  org.apache.juli.logging.DirectJDKLog %PARSER_ERROR[x] -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-21 10:38:28 [http-nio-8083-exec-1] INFO  org.springframework.web.servlet.FrameworkServlet %PARSER_ERROR[x] -Initializing Servlet 'dispatcherServlet'
+2020-04-21 10:38:28 [http-nio-8083-exec-1] INFO  org.springframework.web.servlet.FrameworkServlet %PARSER_ERROR[x] -Completed initialization in 9 ms
+2020-04-21 10:38:28 [http-nio-8083-exec-1] INFO  com.bridgelabz.noteservice.service.NoteServiceProvider %PARSER_ERROR[x] -Get All Notes method
+2020-04-21 10:38:28 [http-nio-8083-exec-1] INFO  com.bridgelabz.noteservice.service.NoteServiceProvider %PARSER_ERROR[x] -eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIn0.1e509W4ZgPedrXBS8RTGEt1qcqIZhLmjPVZHaolDMc1tn108ypOxFTPDg2jAYa0hXR-W3O9rF3H3lLGRmGBwUA
+2020-04-21 10:38:28 [http-nio-8083-exec-1] INFO  com.bridgelabz.noteservice.service.NoteServiceProvider %PARSER_ERROR[x] -Get Note By Id Method
+2020-04-21 10:38:28 [http-nio-8083-exec-1] INFO  com.bridgelabz.noteservice.service.NoteServiceProvider %PARSER_ERROR[x] -eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIn0.1e509W4ZgPedrXBS8RTGEt1qcqIZhLmjPVZHaolDMc1tn108ypOxFTPDg2jAYa0hXR-W3O9rF3H3lLGRmGBwUA
+2020-04-21 10:38:28 [http-nio-8083-exec-1] INFO  com.netflix.config.ChainedDynamicProperty$ChainLink %PARSER_ERROR[x] -Flipping property: fundoo-api-gateway.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2020-04-21 10:38:28 [http-nio-8083-exec-1] INFO  com.netflix.util.concurrent.ShutdownEnabledTimer %PARSER_ERROR[x] -Shutdown hook installed for: NFLoadBalancer-PingTimer-fundoo-api-gateway
+2020-04-21 10:38:28 [http-nio-8083-exec-1] INFO  com.netflix.loadbalancer.BaseLoadBalancer %PARSER_ERROR[x] -Client: fundoo-api-gateway instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=fundoo-api-gateway,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2020-04-21 10:38:28 [http-nio-8083-exec-1] INFO  com.netflix.loadbalancer.DynamicServerListLoadBalancer %PARSER_ERROR[x] -Using serverListUpdater PollingServerListUpdater
+2020-04-21 10:38:28 [http-nio-8083-exec-1] INFO  com.netflix.config.ChainedDynamicProperty$ChainLink %PARSER_ERROR[x] -Flipping property: fundoo-api-gateway.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2020-04-21 10:38:28 [http-nio-8083-exec-1] INFO  com.netflix.loadbalancer.DynamicServerListLoadBalancer %PARSER_ERROR[x] -DynamicServerListLoadBalancer for client fundoo-api-gateway initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=fundoo-api-gateway,current list of Servers=[localhost:8070],Load balancer stats=Zone stats: {defaultzone=[Zone:defaultzone;	Instance count:1;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:localhost:8070;	Zone:defaultZone;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 05:30:00 IST 1970;	First connection made: Thu Jan 01 05:30:00 IST 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@72738fb
+2020-04-21 10:38:28 [http-nio-8083-exec-1] INFO  com.bridgelabz.noteservice.service.NoteServiceProvider %PARSER_ERROR[x] -Get Notes through db
+2020-04-21 10:38:28 [http-nio-8083-exec-1] INFO  com.bridgelabz.noteservice.repository.RedisService %PARSER_ERROR[x] -Redis service save method
+2020-04-21 10:38:28 [http-nio-8083-exec-1] ERROR org.apache.juli.logging.DirectJDKLog %PARSER_ERROR[x] -Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.InvalidDataAccessApiUsageException: WRONGTYPE Operation against a key holding the wrong kind of value; nested exception is redis.clients.jedis.exceptions.JedisDataException: WRONGTYPE Operation against a key holding the wrong kind of value] with root cause
+redis.clients.jedis.exceptions.JedisDataException: WRONGTYPE Operation against a key holding the wrong kind of value
+	at redis.clients.jedis.Protocol.processError(Protocol.java:132) ~[jedis-3.1.0.jar:na]
+	at redis.clients.jedis.Protocol.process(Protocol.java:166) ~[jedis-3.1.0.jar:na]
+	at redis.clients.jedis.Protocol.read(Protocol.java:220) ~[jedis-3.1.0.jar:na]
+	at redis.clients.jedis.Connection.readProtocolWithCheckingBroken(Connection.java:318) ~[jedis-3.1.0.jar:na]
+	at redis.clients.jedis.Connection.getIntegerReply(Connection.java:260) ~[jedis-3.1.0.jar:na]
+	at redis.clients.jedis.BinaryJedis.hset(BinaryJedis.java:899) ~[jedis-3.1.0.jar:na]
+	at org.springframework.data.redis.connection.jedis.JedisHashCommands.hSet(JedisHashCommands.java:68) ~[spring-data-redis-2.2.6.RELEASE.jar:2.2.6.RELEASE]
+	at org.springframework.data.redis.connection.DefaultedRedisConnection.hSet(DefaultedRedisConnection.java:1020) ~[spring-data-redis-2.2.6.RELEASE.jar:2.2.6.RELEASE]
+	at org.springframework.data.redis.core.DefaultHashOperations.lambda$put$9(DefaultHashOperations.java:192) ~[spring-data-redis-2.2.6.RELEASE.jar:2.2.6.RELEASE]
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:228) ~[spring-data-redis-2.2.6.RELEASE.jar:2.2.6.RELEASE]
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:188) ~[spring-data-redis-2.2.6.RELEASE.jar:2.2.6.RELEASE]
+	at org.springframework.data.redis.core.AbstractOperations.execute(AbstractOperations.java:96) ~[spring-data-redis-2.2.6.RELEASE.jar:2.2.6.RELEASE]
+	at org.springframework.data.redis.core.DefaultHashOperations.put(DefaultHashOperations.java:191) ~[spring-data-redis-2.2.6.RELEASE.jar:2.2.6.RELEASE]
+	at com.bridgelabz.noteservice.repository.RedisService.save(RedisService.java:31) ~[classes/:na]
+	at com.bridgelabz.noteservice.service.NoteServiceProvider.lambda$20(NoteServiceProvider.java:480) ~[classes/:na]
+	at java.util.ArrayList.forEach(ArrayList.java:1257) ~[na:1.8.0_201]
+	at com.bridgelabz.noteservice.service.NoteServiceProvider.getNoteById(NoteServiceProvider.java:479) ~[classes/:na]
+	at com.bridgelabz.noteservice.service.NoteServiceProvider.getAllNotes(NoteServiceProvider.java:305) ~[classes/:na]
+	at com.bridgelabz.noteservice.service.NoteServiceProvider$$FastClassBySpringCGLIB$$cd3fdee5.invoke(<generated>) ~[classes/:na]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:687) ~[spring-aop-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at com.bridgelabz.noteservice.service.NoteServiceProvider$$EnhancerBySpringCGLIB$$4bf91957.getAllNotes(<generated>) ~[classes/:na]
+	at com.bridgelabz.noteservice.controller.NoteController.getAllNotes(NoteController.java:98) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_201]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_201]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_201]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_201]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.33.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_201]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_201]
+2020-04-21 10:38:29 [PollingServerListUpdater-0] INFO  com.netflix.config.ChainedDynamicProperty$ChainLink %PARSER_ERROR[x] -Flipping property: fundoo-api-gateway.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2020-04-21 10:42:27 [AsyncResolver-bootstrap-executor-0] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver %PARSER_ERROR[x] -Resolving eureka endpoints via configuration
+2020-04-21 10:45:18 [Thread-132] INFO  org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry %PARSER_ERROR[x] -Unregistering application NOTE-SERVICE with eureka with status DOWN
+2020-04-21 10:45:18 [Thread-132] WARN  com.netflix.discovery.DiscoveryClient$3 %PARSER_ERROR[x] -Saw local status change event StatusChangeEvent [timestamp=1587446118398, current=DOWN, previous=UP]
+2020-04-21 10:45:18 [DiscoveryClient-InstanceInfoReplicator-0] INFO  com.netflix.discovery.DiscoveryClient %PARSER_ERROR[x] -DiscoveryClient_NOTE-SERVICE/DESKTOP-VJE8VFV:note-service:8083: registering service...
+2020-04-21 10:45:18 [Thread-132] INFO  com.netflix.util.concurrent.ShutdownEnabledTimer %PARSER_ERROR[x] -Shutdown hook removed for: NFLoadBalancer-PingTimer-fundoo-api-gateway
+2020-04-21 10:45:18 [Thread-132] INFO  org.springframework.scheduling.concurrent.ExecutorConfigurationSupport %PARSER_ERROR[x] -Shutting down ExecutorService 'applicationTaskExecutor'
+2020-04-21 10:45:18 [Thread-132] INFO  org.springframework.orm.jpa.AbstractEntityManagerFactoryBean %PARSER_ERROR[x] -Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-04-21 10:45:18 [DiscoveryClient-InstanceInfoReplicator-0] INFO  com.netflix.discovery.DiscoveryClient %PARSER_ERROR[x] -DiscoveryClient_NOTE-SERVICE/DESKTOP-VJE8VFV:note-service:8083 - registration status: 204
+2020-04-21 10:45:18 [Thread-132] INFO  com.zaxxer.hikari.HikariDataSource %PARSER_ERROR[x] -HikariPool-14 - Shutdown initiated...
+2020-04-21 10:45:18 [Thread-132] INFO  com.zaxxer.hikari.HikariDataSource %PARSER_ERROR[x] -HikariPool-14 - Shutdown completed.
+2020-04-21 10:45:18 [Thread-132] INFO  com.netflix.discovery.DiscoveryClient %PARSER_ERROR[x] -Shutting down DiscoveryClient ...
+2020-04-21 10:45:21 [Thread-132] INFO  com.netflix.discovery.DiscoveryClient %PARSER_ERROR[x] -Unregistering ...
+2020-04-21 10:45:21 [Thread-132] INFO  com.netflix.discovery.DiscoveryClient %PARSER_ERROR[x] -DiscoveryClient_NOTE-SERVICE/DESKTOP-VJE8VFV:note-service:8083 - deregister  status: 200
+2020-04-21 10:45:21 [Thread-132] INFO  com.netflix.discovery.DiscoveryClient %PARSER_ERROR[x] -Completed shut down of DiscoveryClient
+2020-04-21 10:45:22 [restartedMain] INFO  org.springframework.boot.SpringApplication %PARSER_ERROR[x] -The following profiles are active: dev
+2020-04-21 10:45:22 [restartedMain] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate %PARSER_ERROR[x] -Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-04-21 10:45:22 [restartedMain] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate %PARSER_ERROR[x] -Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-04-21 10:45:22 [restartedMain] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate %PARSER_ERROR[x] -Finished Spring Data repository scanning in 8ms. Found 2 JPA repository interfaces.
+2020-04-21 10:45:22 [restartedMain] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate %PARSER_ERROR[x] -Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-04-21 10:45:22 [restartedMain] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate %PARSER_ERROR[x] -Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-04-21 10:45:22 [restartedMain] INFO  org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport %PARSER_ERROR[x] -Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.bridgelabz.noteservice.repository.LabelRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2020-04-21 10:45:22 [restartedMain] INFO  org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport %PARSER_ERROR[x] -Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.bridgelabz.noteservice.repository.NoteRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2020-04-21 10:45:22 [restartedMain] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate %PARSER_ERROR[x] -Finished Spring Data repository scanning in 2ms. Found 0 Redis repository interfaces.
+2020-04-21 10:45:22 [restartedMain] INFO  org.springframework.cloud.context.scope.GenericScope %PARSER_ERROR[x] -BeanFactory id=d5559c37-9df4-34bf-bd4c-e2e371b963da
+2020-04-21 10:45:22 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer %PARSER_ERROR[x] -Tomcat initialized with port(s): 8083 (http)
+2020-04-21 10:45:22 [restartedMain] INFO  org.apache.juli.logging.DirectJDKLog %PARSER_ERROR[x] -Starting service [Tomcat]
+2020-04-21 10:45:22 [restartedMain] INFO  org.apache.juli.logging.DirectJDKLog %PARSER_ERROR[x] -Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-04-21 10:45:22 [restartedMain] INFO  org.apache.juli.logging.DirectJDKLog %PARSER_ERROR[x] -Initializing Spring embedded WebApplicationContext
+2020-04-21 10:45:22 [restartedMain] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext %PARSER_ERROR[x] -Root WebApplicationContext: initialization completed in 436 ms
+2020-04-21 10:45:22 [restartedMain] INFO  org.hibernate.jpa.internal.util.LogHelper %PARSER_ERROR[x] -HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-04-21 10:45:22 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource %PARSER_ERROR[x] -HikariPool-15 - Starting...
+2020-04-21 10:45:22 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource %PARSER_ERROR[x] -HikariPool-15 - Start completed.
+2020-04-21 10:45:22 [restartedMain] INFO  org.hibernate.dialect.Dialect %PARSER_ERROR[x] -HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-04-21 10:45:23 [restartedMain] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator %PARSER_ERROR[x] -HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-04-21 10:45:23 [restartedMain] INFO  org.springframework.orm.jpa.AbstractEntityManagerFactoryBean %PARSER_ERROR[x] -Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-04-21 10:45:23 [restartedMain] WARN  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer %PARSER_ERROR[x] -Unable to start LiveReload server
+2020-04-21 10:45:23 [restartedMain] WARN  com.netflix.config.sources.URLConfigurationSource %PARSER_ERROR[x] -No URLs will be polled as dynamic configuration sources.
+2020-04-21 10:45:23 [restartedMain] INFO  com.netflix.config.sources.URLConfigurationSource %PARSER_ERROR[x] -To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-04-21 10:45:23 [restartedMain] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration %PARSER_ERROR[x] -spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-04-21 10:45:23 [restartedMain] INFO  org.springframework.scheduling.concurrent.ExecutorConfigurationSupport %PARSER_ERROR[x] -Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-21 10:45:23 [restartedMain] WARN  org.springframework.cloud.loadbalancer.config.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger %PARSER_ERROR[x] -You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2020-04-21 10:45:23 [restartedMain] INFO  org.springframework.cloud.netflix.eureka.InstanceInfoFactory %PARSER_ERROR[x] -Setting initial instance status as: STARTING
+2020-04-21 10:45:23 [restartedMain] INFO  com.netflix.discovery.DiscoveryClient %PARSER_ERROR[x] -Initializing Eureka in region us-east-1
+2020-04-21 10:45:23 [restartedMain] INFO  com.netflix.discovery.provider.DiscoveryJerseyProvider %PARSER_ERROR[x] -Using JSON encoding codec LegacyJacksonJson
+2020-04-21 10:45:23 [restartedMain] INFO  com.netflix.discovery.provider.DiscoveryJerseyProvider %PARSER_ERROR[x] -Using JSON decoding codec LegacyJacksonJson
+2020-04-21 10:45:23 [restartedMain] INFO  com.netflix.discovery.provider.DiscoveryJerseyProvider %PARSER_ERROR[x] -Using XML encoding codec XStreamXml
+2020-04-21 10:45:23 [restartedMain] INFO  com.netflix.discovery.provider.DiscoveryJerseyProvider %PARSER_ERROR[x] -Using XML decoding codec XStreamXml
+2020-04-21 10:45:23 [restartedMain] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver %PARSER_ERROR[x] -Resolving eureka endpoints via configuration
+2020-04-21 10:45:23 [restartedMain] INFO  com.netflix.discovery.DiscoveryClient %PARSER_ERROR[x] -Disable delta property : false
+2020-04-21 10:45:23 [restartedMain] INFO  com.netflix.discovery.DiscoveryClient %PARSER_ERROR[x] -Single vip registry refresh property : null
+2020-04-21 10:45:23 [restartedMain] INFO  com.netflix.discovery.DiscoveryClient %PARSER_ERROR[x] -Force full registry fetch : false
+2020-04-21 10:45:23 [restartedMain] INFO  com.netflix.discovery.DiscoveryClient %PARSER_ERROR[x] -Application is null : false
+2020-04-21 10:45:23 [restartedMain] INFO  com.netflix.discovery.DiscoveryClient %PARSER_ERROR[x] -Registered Applications size is zero : true
+2020-04-21 10:45:23 [restartedMain] INFO  com.netflix.discovery.DiscoveryClient %PARSER_ERROR[x] -Application version is -1: true
+2020-04-21 10:45:23 [restartedMain] INFO  com.netflix.discovery.DiscoveryClient %PARSER_ERROR[x] -Getting all instance registry info from the eureka server
+2020-04-21 10:45:23 [restartedMain] INFO  com.netflix.discovery.DiscoveryClient %PARSER_ERROR[x] -The response status is 200
+2020-04-21 10:45:23 [restartedMain] INFO  com.netflix.discovery.DiscoveryClient %PARSER_ERROR[x] -Starting heartbeat executor: renew interval is: 30
+2020-04-21 10:45:23 [restartedMain] INFO  com.netflix.discovery.InstanceInfoReplicator %PARSER_ERROR[x] -InstanceInfoReplicator onDemand update allowed rate per min is 4
+2020-04-21 10:45:23 [restartedMain] INFO  com.netflix.discovery.DiscoveryClient %PARSER_ERROR[x] -Discovery Client initialized at timestamp 1587446123580 with initial instances count: 3
+2020-04-21 10:45:23 [restartedMain] INFO  org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry %PARSER_ERROR[x] -Registering application NOTE-SERVICE with eureka with status UP
+2020-04-21 10:45:23 [restartedMain] INFO  com.netflix.discovery.DiscoveryClient$3 %PARSER_ERROR[x] -Saw local status change event StatusChangeEvent [timestamp=1587446123581, current=UP, previous=STARTING]
+2020-04-21 10:45:23 [DiscoveryClient-InstanceInfoReplicator-0] INFO  com.netflix.discovery.DiscoveryClient %PARSER_ERROR[x] -DiscoveryClient_NOTE-SERVICE/DESKTOP-VJE8VFV:note-service:8083: registering service...
+2020-04-21 10:45:23 [DiscoveryClient-InstanceInfoReplicator-0] INFO  com.netflix.discovery.DiscoveryClient %PARSER_ERROR[x] -DiscoveryClient_NOTE-SERVICE/DESKTOP-VJE8VFV:note-service:8083 - registration status: 204
+2020-04-21 10:45:23 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer %PARSER_ERROR[x] -Tomcat started on port(s): 8083 (http) with context path ''
+2020-04-21 10:45:23 [restartedMain] INFO  org.springframework.cloud.netflix.eureka.serviceregistry.EurekaAutoServiceRegistration %PARSER_ERROR[x] -Updating port to 8083
+2020-04-21 10:45:23 [restartedMain] INFO  org.springframework.boot.StartupInfoLogger %PARSER_ERROR[x] -Started NoteServiceApplication in 1.862 seconds (JVM running for 2478.425)
+2020-04-21 10:45:23 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener %PARSER_ERROR[x] -Condition evaluation unchanged

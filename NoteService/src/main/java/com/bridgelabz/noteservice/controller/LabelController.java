@@ -29,30 +29,30 @@ public class LabelController {
 	@Autowired
 	private LabelService lService;
 	
-//	@PostMapping(value = "/create")
-//	private ResponseEntity<Response> createLabel(@RequestBody LabelDTO labelDTO,@RequestHeader(name = "header") String token){
-//		return ResponseEntity.ok().body(lService.createLabel(token, labelDTO));
-//	}
-//	
-//	@PutMapping(value = "/update")
-//	private ResponseEntity<Response> updateLabel(@RequestBody LabelDTO labelDTO,@RequestHeader(name = "header") String token, Long lid){
-//		lService.updateLabel(token, labelDTO, lid);
-//		return ResponseEntity.ok().body(new Response(HttpStatus.OK.value(), "Successfully updated"));
-//	}
-//	
-//	@DeleteMapping(value = "/delete")
-//	private ResponseEntity<Response> deleteLabel(@RequestHeader(name = "header") String token,@RequestParam Long lid){
-//		lService.deleteLabel(token, lid);
-//		return ResponseEntity.ok().body(new Response(HttpStatus.OK.value(), "Successfully deleted"));
-//	}
-//	
-//	@GetMapping(value = "/getAllLabel")
-//	private ResponseEntity<Response> getAllLabel(@RequestHeader(name = "header") String token){
-//		return ResponseEntity.ok().body(new Response(HttpStatus.FOUND.value(), "Found all labels", lService.getAllLables(token)));
-//	}
-//	
-//	@GetMapping(value = "/getNotesOfLable")
-//	private ResponseEntity<Response> getNotesOfLable(@RequestHeader(name = "header") String token,@RequestParam Long lid){
-//		return ResponseEntity.ok().body(new Response(HttpStatus.FOUND.value(), "Found all labels", lService.getNoteByLabel(token, lid)));
-//	}
+	@PostMapping(value = "/create")
+	private ResponseEntity<Response> createLabel(@RequestBody LabelDTO labelDTO,@RequestHeader(name = "header") String token){
+		return ResponseEntity.ok().body(lService.createLabel(token, labelDTO));
+	}
+	
+	@PutMapping(value = "/update")
+	private ResponseEntity<Response> updateLabel(@RequestBody LabelDTO labelDTO,@RequestHeader(name = "header") String token, Long lid){
+		lService.updateLabel(token, labelDTO, lid);
+		return ResponseEntity.ok().body(new Response(HttpStatus.OK.value(), "Successfully updated"));
+	}
+	
+	@DeleteMapping(value = "/delete")
+	private ResponseEntity<Response> deleteLabel(@RequestHeader(name = "header") String token,@RequestParam Long lid){
+		lService.deleteLabel(token, lid);
+		return ResponseEntity.ok().body(new Response(HttpStatus.OK.value(), "Successfully deleted"));
+	}
+	
+	@GetMapping(value = "/getAllLabel")
+	private ResponseEntity<Response> getAllLabel(@RequestHeader(name = "header") String token){
+		return ResponseEntity.ok().body(new Response(HttpStatus.FOUND.value(), "Found all labels", lService.getAllLables(token)));
+	}
+	
+	@GetMapping(value = "/getNotesOfLable")
+	private ResponseEntity<Response> getNotesOfLable(@RequestHeader(name = "header") String token,@RequestParam Long lid){
+		return ResponseEntity.ok().body(new Response(HttpStatus.FOUND.value(), "Found all labels", lService.getNoteByLabel(token, lid)));
+	}
 }

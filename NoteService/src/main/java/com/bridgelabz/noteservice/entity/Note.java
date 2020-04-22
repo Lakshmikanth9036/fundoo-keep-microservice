@@ -1,11 +1,13 @@
 package com.bridgelabz.noteservice.entity;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
@@ -16,12 +18,14 @@ import com.bridgelabz.noteservice.dto.NoteDTO;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 
 @Entity
 @Data
 @NoArgsConstructor
-public class Note {
+@ToString
+public class Note implements Serializable{
 
 	@Id
 	@GenericGenerator(name = "nId", strategy = "increment")
@@ -59,7 +63,7 @@ public class Note {
 	@Column
 	private LocalDateTime reminder;
 	
-	@ManyToMany(cascade = CascadeType.REMOVE)
+	@ManyToMany(fetch = FetchType.EAGER,cascade = CascadeType.REMOVE)
 	private List<Label> labels;
 	
 	public Note(NoteDTO noteDTO) {

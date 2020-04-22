@@ -1,0 +1,27 @@
+2020-04-21 11:27:17 [http-nio-8083-exec-1] INFO  com.bridgelabz.noteservice.service.NoteServiceProvider %PARSER_ERROR[x] -Get Trash Notes method
+2020-04-21 11:27:17 [http-nio-8083-exec-1] INFO  com.bridgelabz.noteservice.service.NoteServiceProvider %PARSER_ERROR[x] -eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIn0.1e509W4ZgPedrXBS8RTGEt1qcqIZhLmjPVZHaolDMc1tn108ypOxFTPDg2jAYa0hXR-W3O9rF3H3lLGRmGBwUA
+2020-04-21 11:27:17 [http-nio-8083-exec-1] INFO  com.bridgelabz.noteservice.service.NoteServiceProvider %PARSER_ERROR[x] -Get Note By Id Method
+2020-04-21 11:27:17 [http-nio-8083-exec-1] INFO  com.bridgelabz.noteservice.service.NoteServiceProvider %PARSER_ERROR[x] -eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIn0.1e509W4ZgPedrXBS8RTGEt1qcqIZhLmjPVZHaolDMc1tn108ypOxFTPDg2jAYa0hXR-W3O9rF3H3lLGRmGBwUA
+2020-04-21 11:27:17 [http-nio-8083-exec-1] INFO  com.bridgelabz.noteservice.repository.RedisService %PARSER_ERROR[x] -Redis service Find all method
+2020-04-21 11:27:17 [http-nio-8083-exec-1] INFO  com.bridgelabz.noteservice.service.NoteServiceProvider %PARSER_ERROR[x] -Get Notes through redis
+2020-04-21 11:27:17 [http-nio-8083-exec-1] INFO  com.bridgelabz.noteservice.repository.RedisService %PARSER_ERROR[x] -Redis service Find all method
+2020-04-21 11:27:17 [http-nio-8083-exec-1] WARN  org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver %PARSER_ERROR[x] -Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: failed to lazily initialize a collection of role: com.bridgelabz.noteservice.entity.Note.labels, could not initialize proxy - no Session; nested exception is com.fasterxml.jackson.databind.JsonMappingException: failed to lazily initialize a collection of role: com.bridgelabz.noteservice.entity.Note.labels, could not initialize proxy - no Session (through reference chain: com.bridgelabz.noteservice.dto.Response["obj"]->java.util.LinkedList[0]->com.bridgelabz.noteservice.entity.Note["labels"])]
+2020-04-21 11:28:54 [AsyncResolver-bootstrap-executor-0] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver %PARSER_ERROR[x] -Resolving eureka endpoints via configuration
+2020-04-21 11:33:54 [AsyncResolver-bootstrap-executor-0] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver %PARSER_ERROR[x] -Resolving eureka endpoints via configuration
+2020-04-21 11:38:06 [RMI TCP Connection(8)-127.0.0.1] INFO  org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin %PARSER_ERROR[x] -Application shutdown requested.
+2020-04-21 11:38:06 [RMI TCP Connection(8)-127.0.0.1] INFO  org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry %PARSER_ERROR[x] -Unregistering application NOTE-SERVICE with eureka with status DOWN
+2020-04-21 11:38:06 [RMI TCP Connection(8)-127.0.0.1] WARN  com.netflix.discovery.DiscoveryClient$3 %PARSER_ERROR[x] -Saw local status change event StatusChangeEvent [timestamp=1587449286076, current=DOWN, previous=UP]
+2020-04-21 11:38:06 [DiscoveryClient-InstanceInfoReplicator-0] INFO  com.netflix.discovery.DiscoveryClient %PARSER_ERROR[x] -DiscoveryClient_NOTE-SERVICE/DESKTOP-VJE8VFV:note-service:8083: registering service...
+2020-04-21 11:38:06 [DiscoveryClient-InstanceInfoReplicator-0] INFO  com.netflix.discovery.DiscoveryClient %PARSER_ERROR[x] -DiscoveryClient_NOTE-SERVICE/DESKTOP-VJE8VFV:note-service:8083 - registration status: 204
+2020-04-21 11:38:06 [RMI TCP Connection(8)-127.0.0.1] INFO  com.netflix.util.concurrent.ShutdownEnabledTimer %PARSER_ERROR[x] -Shutdown hook removed for: NFLoadBalancer-PingTimer-fundoo-api-gateway
+2020-04-21 11:38:06 [RMI TCP Connection(8)-127.0.0.1] INFO  org.springframework.scheduling.concurrent.ExecutorConfigurationSupport %PARSER_ERROR[x] -Shutting down ExecutorService 'applicationTaskExecutor'
+2020-04-21 11:38:06 [RMI TCP Connection(8)-127.0.0.1] INFO  org.springframework.orm.jpa.AbstractEntityManagerFactoryBean %PARSER_ERROR[x] -Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-04-21 11:38:06 [RMI TCP Connection(8)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource %PARSER_ERROR[x] -HikariPool-27 - Shutdown initiated...
+2020-04-21 11:38:06 [RMI TCP Connection(8)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource %PARSER_ERROR[x] -HikariPool-27 - Shutdown completed.
+2020-04-21 11:38:06 [RMI TCP Connection(8)-127.0.0.1] INFO  com.netflix.discovery.DiscoveryClient %PARSER_ERROR[x] -Shutting down DiscoveryClient ...
+2020-04-21 11:38:09 [RMI TCP Connection(8)-127.0.0.1] INFO  com.netflix.discovery.DiscoveryClient %PARSER_ERROR[x] -Unregistering ...
+2020-04-21 11:38:09 [RMI TCP Connection(8)-127.0.0.1] INFO  com.netflix.discovery.DiscoveryClient %PARSER_ERROR[x] -DiscoveryClient_NOTE-SERVICE/DESKTOP-VJE8VFV:note-service:8083 - deregister  status: 200
+2020-04-21 11:38:09 [RMI TCP Connection(8)-127.0.0.1] INFO  com.netflix.discovery.DiscoveryClient %PARSER_ERROR[x] -Completed shut down of DiscoveryClient
+2020-04-21 11:38:09 [RMI TCP Connection(8)-127.0.0.1] INFO  org.apache.juli.logging.DirectJDKLog %PARSER_ERROR[x] -Stopping service [Tomcat]
+2020-04-21 11:38:09 [RMI TCP Connection(8)-127.0.0.1] INFO  org.apache.juli.logging.DirectJDKLog %PARSER_ERROR[x] -Destroying Spring FrameworkServlet 'dispatcherServlet'
+2020-04-21 11:38:09 [Thread-13] INFO  com.netflix.loadbalancer.PollingServerListUpdater$LazyHolder$2 %PARSER_ERROR[x] -Shutting down the Executor Pool for PollingServerListUpdater

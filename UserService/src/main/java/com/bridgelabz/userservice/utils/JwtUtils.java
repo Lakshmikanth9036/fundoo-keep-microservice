@@ -12,8 +12,10 @@ import com.bridgelabz.userservice.repository.RedisService;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import lombok.extern.slf4j.Slf4j;
 
 @Service
+@Slf4j
 public class JwtUtils {
 
 	@Autowired
@@ -33,19 +35,22 @@ public class JwtUtils {
 	}
 
 	public Long decodeToken(String jwt) {
-		
-			if (redisService.getToken(jwt) != null)
-				return redisService.getToken(jwt);
-			else {
-				try {
+
+		log.info("Decode Token Method");
+		if (redisService.getToken(jwt) != null) {
+			log.info("Get token from redis server");
+			log.info(redisService.getToken(jwt).toString());
+			return redisService.getToken(jwt);
+		} else {
+			try {
+				log.info("Get token by decoding");
 				Claims claim = Jwts.parser().setSigningKey(SECRET).parseClaimsJws(jwt).getBody();
 				Long id = Long.parseLong(claim.getSubject());
 				redisService.putToken(jwt, id);
 				return id;
-				}
-				 catch (TokenException e) {
-						throw new TokenException(HttpStatus.REQUEST_TIMEOUT.value(), "HttpStatus.REQUEST_TIMEOUT.toString()");
-					}
+			} catch (TokenException e) {
+				throw new TokenException(HttpStatus.REQUEST_TIMEOUT.value(), "HttpStatus.REQUEST_TIMEOUT.toString()");
 			}
+		}
 	}
 }

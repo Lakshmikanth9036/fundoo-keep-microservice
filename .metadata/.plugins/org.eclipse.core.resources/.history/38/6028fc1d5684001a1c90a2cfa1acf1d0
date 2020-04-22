@@ -1,0 +1,7 @@
+2020-04-22 10:29:25 [http-nio-8083-exec-4] INFO  com.bridgelabz.noteservice.service.NoteServiceProvider %PARSER_ERROR[x] -Get Archive Notes method
+2020-04-22 10:29:25 [http-nio-8083-exec-4] INFO  com.bridgelabz.noteservice.service.NoteServiceProvider %PARSER_ERROR[x] -eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIn0.1e509W4ZgPedrXBS8RTGEt1qcqIZhLmjPVZHaolDMc1tn108ypOxFTPDg2jAYa0hXR-W3O9rF3H3lLGRmGBwUA
+2020-04-22 10:29:25 [http-nio-8083-exec-4] INFO  com.bridgelabz.noteservice.service.NoteServiceProvider %PARSER_ERROR[x] -Get Note By Id Method
+2020-04-22 10:29:25 [http-nio-8083-exec-4] INFO  com.bridgelabz.noteservice.service.NoteServiceProvider %PARSER_ERROR[x] -eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIn0.1e509W4ZgPedrXBS8RTGEt1qcqIZhLmjPVZHaolDMc1tn108ypOxFTPDg2jAYa0hXR-W3O9rF3H3lLGRmGBwUA
+2020-04-22 10:29:25 [http-nio-8083-exec-4] INFO  com.bridgelabz.noteservice.repository.RedisService %PARSER_ERROR[x] -Redis service Find all method
+2020-04-22 10:29:25 [http-nio-8083-exec-4] INFO  com.bridgelabz.noteservice.service.NoteServiceProvider %PARSER_ERROR[x] -Get Notes through redis
+2020-04-22 10:29:25 [http-nio-8083-exec-4] INFO  com.bridgelabz.noteservice.repository.RedisService %PARSER_ERROR[x] -Redis service Find all method

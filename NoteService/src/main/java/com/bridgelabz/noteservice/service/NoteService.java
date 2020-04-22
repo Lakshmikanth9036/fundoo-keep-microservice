@@ -2,8 +2,10 @@ package com.bridgelabz.noteservice.service;
 
 import java.util.List;
 
+import com.bridgelabz.noteservice.dto.LabelDTO;
 import com.bridgelabz.noteservice.dto.NoteDTO;
 import com.bridgelabz.noteservice.dto.ReminderDTO;
+import com.bridgelabz.noteservice.dto.Response;
 import com.bridgelabz.noteservice.entity.Note;
 
 public interface NoteService {
@@ -22,9 +24,8 @@ public interface NoteService {
 	public List<Note> sortByTitle(String token);
 	public List<Note> sortByDateAndTime(String token);
 	public List<Note> getReminderNotes(String token);
-//	public Response addOrCreateLable(String token,Long noteId,LabelDTO labelDTO);
-//	public Response removeLabel(String token,Long noteId,Long labelId);
-//	public List<Note> getNoteByTitleAndDescription(String text);
+	public Response addOrCreateLable(String token,Long noteId,LabelDTO labelDTO);
+	public Response removeLabel(String token,Long noteId,Long labelId);
 	public void removeReminder(String token, Long noteId);
 	public void addReminder(String token, Long noteId, ReminderDTO remainder);
 	

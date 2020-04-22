@@ -1,10 +1,12 @@
 package com.bridgelabz.noteservice.entity;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
@@ -14,8 +16,15 @@ import org.hibernate.annotations.GenericGenerator;
 import com.bridgelabz.noteservice.dto.LabelDTO;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
 @Entity
-public class Label {
+@Data
+@NoArgsConstructor
+@ToString
+public class Label implements Serializable{
 
 	@Id
 	@GenericGenerator(name = "lId", strategy = "increment")
@@ -30,41 +39,12 @@ public class Label {
 	private String labelName;
 	
 	@JsonIgnore
-	@ManyToMany(mappedBy = "labels")
+	@ManyToMany(fetch = FetchType.EAGER, mappedBy = "labels")
 	private List<Note> notes;
 	
-	public Label() {
-	}
 
 	public Label(LabelDTO labelDTO) {
 		this.labelName = labelDTO.getLabelName();
 		notes = new ArrayList<>();
 	}
-
-	public Long getLabelId() {
-		return labelId;
-	}
-
-	public void setLabelId(Long labelId) {
-		this.labelId = labelId;
-	}
-
-	public String getLabelName() {
-		return labelName;
-	}
-
-	public void setLabelName(String labelName) {
-		this.labelName = labelName;
-	}
-
-	public List<Note> getNotes() {
-		return notes;
-	}
-
-	public void setNotes(List<Note> notes) {
-		this.notes = notes;
-	}
-	
-	
-	
 }

@@ -1,0 +1,69 @@
+2020-04-21 11:15:51 [http-nio-8083-exec-1] INFO  org.apache.juli.logging.DirectJDKLog %PARSER_ERROR[x] -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-21 11:15:51 [http-nio-8083-exec-1] INFO  org.springframework.web.servlet.FrameworkServlet %PARSER_ERROR[x] -Initializing Servlet 'dispatcherServlet'
+2020-04-21 11:15:51 [http-nio-8083-exec-1] INFO  org.springframework.web.servlet.FrameworkServlet %PARSER_ERROR[x] -Completed initialization in 4 ms
+2020-04-21 11:15:51 [http-nio-8083-exec-1] WARN  org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler %PARSER_ERROR[x] -Request method 'GET' not supported
+2020-04-21 11:15:51 [http-nio-8083-exec-1] WARN  org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver %PARSER_ERROR[x] -Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2020-04-21 11:15:57 [http-nio-8083-exec-2] WARN  org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver %PARSER_ERROR[x] -Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required Long parameter 'noteId' is not present]
+2020-04-21 11:16:09 [http-nio-8083-exec-3] INFO  com.bridgelabz.noteservice.service.NoteServiceProvider %PARSER_ERROR[x] -Add or Create Label Method
+2020-04-21 11:16:09 [http-nio-8083-exec-3] INFO  com.bridgelabz.noteservice.service.NoteServiceProvider %PARSER_ERROR[x] -eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIn0.1e509W4ZgPedrXBS8RTGEt1qcqIZhLmjPVZHaolDMc1tn108ypOxFTPDg2jAYa0hXR-W3O9rF3H3lLGRmGBwUA 2
+2020-04-21 11:16:09 [http-nio-8083-exec-3] INFO  com.netflix.config.ChainedDynamicProperty$ChainLink %PARSER_ERROR[x] -Flipping property: fundoo-api-gateway.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2020-04-21 11:16:09 [http-nio-8083-exec-3] INFO  com.netflix.util.concurrent.ShutdownEnabledTimer %PARSER_ERROR[x] -Shutdown hook installed for: NFLoadBalancer-PingTimer-fundoo-api-gateway
+2020-04-21 11:16:09 [http-nio-8083-exec-3] INFO  com.netflix.loadbalancer.BaseLoadBalancer %PARSER_ERROR[x] -Client: fundoo-api-gateway instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=fundoo-api-gateway,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2020-04-21 11:16:09 [http-nio-8083-exec-3] INFO  com.netflix.loadbalancer.DynamicServerListLoadBalancer %PARSER_ERROR[x] -Using serverListUpdater PollingServerListUpdater
+2020-04-21 11:16:09 [http-nio-8083-exec-3] INFO  com.netflix.config.ChainedDynamicProperty$ChainLink %PARSER_ERROR[x] -Flipping property: fundoo-api-gateway.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2020-04-21 11:16:09 [http-nio-8083-exec-3] INFO  com.netflix.loadbalancer.DynamicServerListLoadBalancer %PARSER_ERROR[x] -DynamicServerListLoadBalancer for client fundoo-api-gateway initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=fundoo-api-gateway,current list of Servers=[localhost:8070],Load balancer stats=Zone stats: {defaultzone=[Zone:defaultzone;	Instance count:1;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:localhost:8070;	Zone:defaultZone;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 05:30:00 IST 1970;	First connection made: Thu Jan 01 05:30:00 IST 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@38941dd6
+2020-04-21 11:16:09 [http-nio-8083-exec-3] INFO  com.bridgelabz.noteservice.repository.RedisService %PARSER_ERROR[x] -Redis service save method
+2020-04-21 11:16:10 [PollingServerListUpdater-0] INFO  com.netflix.config.ChainedDynamicProperty$ChainLink %PARSER_ERROR[x] -Flipping property: fundoo-api-gateway.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2020-04-21 11:16:18 [http-nio-8083-exec-4] INFO  com.bridgelabz.noteservice.service.NoteServiceProvider %PARSER_ERROR[x] -Get All Notes method
+2020-04-21 11:16:18 [http-nio-8083-exec-4] INFO  com.bridgelabz.noteservice.service.NoteServiceProvider %PARSER_ERROR[x] -eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIn0.1e509W4ZgPedrXBS8RTGEt1qcqIZhLmjPVZHaolDMc1tn108ypOxFTPDg2jAYa0hXR-W3O9rF3H3lLGRmGBwUA
+2020-04-21 11:16:18 [http-nio-8083-exec-4] INFO  com.bridgelabz.noteservice.service.NoteServiceProvider %PARSER_ERROR[x] -Get Note By Id Method
+2020-04-21 11:16:18 [http-nio-8083-exec-4] INFO  com.bridgelabz.noteservice.service.NoteServiceProvider %PARSER_ERROR[x] -eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIn0.1e509W4ZgPedrXBS8RTGEt1qcqIZhLmjPVZHaolDMc1tn108ypOxFTPDg2jAYa0hXR-W3O9rF3H3lLGRmGBwUA
+2020-04-21 11:16:18 [http-nio-8083-exec-4] INFO  com.bridgelabz.noteservice.repository.RedisService %PARSER_ERROR[x] -Redis service Find all method
+2020-04-21 11:16:18 [http-nio-8083-exec-4] INFO  com.bridgelabz.noteservice.service.NoteServiceProvider %PARSER_ERROR[x] -Get Notes through redis
+2020-04-21 11:16:18 [http-nio-8083-exec-4] INFO  com.bridgelabz.noteservice.repository.RedisService %PARSER_ERROR[x] -Redis service Find all method
+2020-04-21 11:16:34 [http-nio-8083-exec-5] INFO  com.bridgelabz.noteservice.service.NoteServiceProvider %PARSER_ERROR[x] -Get All Notes method
+2020-04-21 11:16:34 [http-nio-8083-exec-5] INFO  com.bridgelabz.noteservice.service.NoteServiceProvider %PARSER_ERROR[x] -eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIn0.1e509W4ZgPedrXBS8RTGEt1qcqIZhLmjPVZHaolDMc1tn108ypOxFTPDg2jAYa0hXR-W3O9rF3H3lLGRmGBwUA
+2020-04-21 11:16:34 [http-nio-8083-exec-5] INFO  com.bridgelabz.noteservice.service.NoteServiceProvider %PARSER_ERROR[x] -Get Note By Id Method
+2020-04-21 11:16:34 [http-nio-8083-exec-5] INFO  com.bridgelabz.noteservice.service.NoteServiceProvider %PARSER_ERROR[x] -eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIn0.1e509W4ZgPedrXBS8RTGEt1qcqIZhLmjPVZHaolDMc1tn108ypOxFTPDg2jAYa0hXR-W3O9rF3H3lLGRmGBwUA
+2020-04-21 11:16:34 [http-nio-8083-exec-5] INFO  com.bridgelabz.noteservice.repository.RedisService %PARSER_ERROR[x] -Redis service Find all method
+2020-04-21 11:16:34 [http-nio-8083-exec-5] INFO  com.bridgelabz.noteservice.service.NoteServiceProvider %PARSER_ERROR[x] -Get Notes through redis
+2020-04-21 11:16:34 [http-nio-8083-exec-5] INFO  com.bridgelabz.noteservice.repository.RedisService %PARSER_ERROR[x] -Redis service Find all method
+2020-04-21 11:16:37 [http-nio-8083-exec-6] INFO  com.bridgelabz.noteservice.service.NoteServiceProvider %PARSER_ERROR[x] -Get All Notes method
+2020-04-21 11:16:37 [http-nio-8083-exec-6] INFO  com.bridgelabz.noteservice.service.NoteServiceProvider %PARSER_ERROR[x] -eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIn0.1e509W4ZgPedrXBS8RTGEt1qcqIZhLmjPVZHaolDMc1tn108ypOxFTPDg2jAYa0hXR-W3O9rF3H3lLGRmGBwUA
+2020-04-21 11:16:37 [http-nio-8083-exec-6] INFO  com.bridgelabz.noteservice.service.NoteServiceProvider %PARSER_ERROR[x] -Get Note By Id Method
+2020-04-21 11:16:37 [http-nio-8083-exec-6] INFO  com.bridgelabz.noteservice.service.NoteServiceProvider %PARSER_ERROR[x] -eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIn0.1e509W4ZgPedrXBS8RTGEt1qcqIZhLmjPVZHaolDMc1tn108ypOxFTPDg2jAYa0hXR-W3O9rF3H3lLGRmGBwUA
+2020-04-21 11:16:37 [http-nio-8083-exec-6] INFO  com.bridgelabz.noteservice.repository.RedisService %PARSER_ERROR[x] -Redis service Find all method
+2020-04-21 11:16:37 [http-nio-8083-exec-6] INFO  com.bridgelabz.noteservice.service.NoteServiceProvider %PARSER_ERROR[x] -Get Notes through redis
+2020-04-21 11:16:37 [http-nio-8083-exec-6] INFO  com.bridgelabz.noteservice.repository.RedisService %PARSER_ERROR[x] -Redis service Find all method
+2020-04-21 11:16:39 [http-nio-8083-exec-8] INFO  com.bridgelabz.noteservice.service.NoteServiceProvider %PARSER_ERROR[x] -Get All Notes method
+2020-04-21 11:16:39 [http-nio-8083-exec-8] INFO  com.bridgelabz.noteservice.service.NoteServiceProvider %PARSER_ERROR[x] -eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIn0.1e509W4ZgPedrXBS8RTGEt1qcqIZhLmjPVZHaolDMc1tn108ypOxFTPDg2jAYa0hXR-W3O9rF3H3lLGRmGBwUA
+2020-04-21 11:16:39 [http-nio-8083-exec-8] INFO  com.bridgelabz.noteservice.service.NoteServiceProvider %PARSER_ERROR[x] -Get Note By Id Method
+2020-04-21 11:16:39 [http-nio-8083-exec-8] INFO  com.bridgelabz.noteservice.service.NoteServiceProvider %PARSER_ERROR[x] -eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIn0.1e509W4ZgPedrXBS8RTGEt1qcqIZhLmjPVZHaolDMc1tn108ypOxFTPDg2jAYa0hXR-W3O9rF3H3lLGRmGBwUA
+2020-04-21 11:16:39 [http-nio-8083-exec-8] INFO  com.bridgelabz.noteservice.repository.RedisService %PARSER_ERROR[x] -Redis service Find all method
+2020-04-21 11:16:39 [http-nio-8083-exec-8] INFO  com.bridgelabz.noteservice.service.NoteServiceProvider %PARSER_ERROR[x] -Get Notes through redis
+2020-04-21 11:16:39 [http-nio-8083-exec-8] INFO  com.bridgelabz.noteservice.repository.RedisService %PARSER_ERROR[x] -Redis service Find all method
+2020-04-21 11:16:43 [http-nio-8083-exec-10] INFO  com.bridgelabz.noteservice.service.NoteServiceProvider %PARSER_ERROR[x] -Get All Notes method
+2020-04-21 11:16:43 [http-nio-8083-exec-10] INFO  com.bridgelabz.noteservice.service.NoteServiceProvider %PARSER_ERROR[x] -eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIn0.1e509W4ZgPedrXBS8RTGEt1qcqIZhLmjPVZHaolDMc1tn108ypOxFTPDg2jAYa0hXR-W3O9rF3H3lLGRmGBwUA
+2020-04-21 11:16:43 [http-nio-8083-exec-10] INFO  com.bridgelabz.noteservice.service.NoteServiceProvider %PARSER_ERROR[x] -Get Note By Id Method
+2020-04-21 11:16:43 [http-nio-8083-exec-10] INFO  com.bridgelabz.noteservice.service.NoteServiceProvider %PARSER_ERROR[x] -eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIn0.1e509W4ZgPedrXBS8RTGEt1qcqIZhLmjPVZHaolDMc1tn108ypOxFTPDg2jAYa0hXR-W3O9rF3H3lLGRmGBwUA
+2020-04-21 11:16:43 [http-nio-8083-exec-10] INFO  com.bridgelabz.noteservice.repository.RedisService %PARSER_ERROR[x] -Redis service Find all method
+2020-04-21 11:16:43 [http-nio-8083-exec-10] INFO  com.bridgelabz.noteservice.service.NoteServiceProvider %PARSER_ERROR[x] -Get Notes through redis
+2020-04-21 11:16:43 [http-nio-8083-exec-10] INFO  com.bridgelabz.noteservice.repository.RedisService %PARSER_ERROR[x] -Redis service Find all method
+2020-04-21 11:17:11 [http-nio-8083-exec-7] INFO  com.bridgelabz.noteservice.service.NoteServiceProvider %PARSER_ERROR[x] -Get Archive Notes method
+2020-04-21 11:17:11 [http-nio-8083-exec-7] INFO  com.bridgelabz.noteservice.service.NoteServiceProvider %PARSER_ERROR[x] -eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIn0.1e509W4ZgPedrXBS8RTGEt1qcqIZhLmjPVZHaolDMc1tn108ypOxFTPDg2jAYa0hXR-W3O9rF3H3lLGRmGBwUA
+2020-04-21 11:17:11 [http-nio-8083-exec-7] INFO  com.bridgelabz.noteservice.service.NoteServiceProvider %PARSER_ERROR[x] -Get Note By Id Method
+2020-04-21 11:17:11 [http-nio-8083-exec-7] INFO  com.bridgelabz.noteservice.service.NoteServiceProvider %PARSER_ERROR[x] -eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIn0.1e509W4ZgPedrXBS8RTGEt1qcqIZhLmjPVZHaolDMc1tn108ypOxFTPDg2jAYa0hXR-W3O9rF3H3lLGRmGBwUA
+2020-04-21 11:17:11 [http-nio-8083-exec-7] INFO  com.bridgelabz.noteservice.repository.RedisService %PARSER_ERROR[x] -Redis service Find all method
+2020-04-21 11:17:11 [http-nio-8083-exec-7] INFO  com.bridgelabz.noteservice.service.NoteServiceProvider %PARSER_ERROR[x] -Get Notes through redis
+2020-04-21 11:17:11 [http-nio-8083-exec-7] INFO  com.bridgelabz.noteservice.repository.RedisService %PARSER_ERROR[x] -Redis service Find all method
+2020-04-21 11:18:20 [http-nio-8083-exec-1] INFO  com.bridgelabz.noteservice.service.NoteServiceProvider %PARSER_ERROR[x] -Get Trash Notes method
+2020-04-21 11:18:20 [http-nio-8083-exec-1] INFO  com.bridgelabz.noteservice.service.NoteServiceProvider %PARSER_ERROR[x] -eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIn0.1e509W4ZgPedrXBS8RTGEt1qcqIZhLmjPVZHaolDMc1tn108ypOxFTPDg2jAYa0hXR-W3O9rF3H3lLGRmGBwUA
+2020-04-21 11:18:20 [http-nio-8083-exec-1] INFO  com.bridgelabz.noteservice.service.NoteServiceProvider %PARSER_ERROR[x] -Get Note By Id Method
+2020-04-21 11:18:20 [http-nio-8083-exec-1] INFO  com.bridgelabz.noteservice.service.NoteServiceProvider %PARSER_ERROR[x] -eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIn0.1e509W4ZgPedrXBS8RTGEt1qcqIZhLmjPVZHaolDMc1tn108ypOxFTPDg2jAYa0hXR-W3O9rF3H3lLGRmGBwUA
+2020-04-21 11:18:20 [http-nio-8083-exec-1] INFO  com.bridgelabz.noteservice.repository.RedisService %PARSER_ERROR[x] -Redis service Find all method
+2020-04-21 11:18:20 [http-nio-8083-exec-1] INFO  com.bridgelabz.noteservice.service.NoteServiceProvider %PARSER_ERROR[x] -Get Notes through redis
+2020-04-21 11:18:20 [http-nio-8083-exec-1] INFO  com.bridgelabz.noteservice.repository.RedisService %PARSER_ERROR[x] -Redis service Find all method
+2020-04-21 11:18:20 [http-nio-8083-exec-1] WARN  org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver %PARSER_ERROR[x] -Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: failed to lazily initialize a collection of role: com.bridgelabz.noteservice.entity.Note.labels, could not initialize proxy - no Session; nested exception is com.fasterxml.jackson.databind.JsonMappingException: failed to lazily initialize a collection of role: com.bridgelabz.noteservice.entity.Note.labels, could not initialize proxy - no Session (through reference chain: com.bridgelabz.noteservice.dto.Response["obj"]->java.util.LinkedList[0]->com.bridgelabz.noteservice.entity.Note["labels"])]
+2020-04-21 11:18:54 [AsyncResolver-bootstrap-executor-0] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver %PARSER_ERROR[x] -Resolving eureka endpoints via configuration

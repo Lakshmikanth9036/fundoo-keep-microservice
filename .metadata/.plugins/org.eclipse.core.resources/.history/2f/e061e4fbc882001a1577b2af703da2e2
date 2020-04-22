@@ -1,0 +1,128 @@
+package com.bridgelabz.noteservice.service;
+
+import java.util.List;
+
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.core.env.Environment;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+
+import com.bridgelabz.noteservice.constants.Constants;
+import com.bridgelabz.noteservice.dto.LabelDTO;
+import com.bridgelabz.noteservice.dto.Response;
+import com.bridgelabz.noteservice.entity.Label;
+import com.bridgelabz.noteservice.exception.LabelException;
+import com.bridgelabz.noteservice.exception.NoteException;
+import com.bridgelabz.noteservice.repository.LabelRepository;
+import com.bridgelabz.noteservice.repository.NoteRepository;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Service
+@Slf4j
+@PropertySource("classpath:message.properties")
+public class LabelServiceProvider implements LabelService{
+	
+	@Autowired
+	private LabelRepository labelRepository;
+	
+	@Autowired
+	private NoteRepository noteRepository;
+	
+	@Autowired
+	private Environment env;
+	
+	@Autowired
+	private RestTemplate restTemplate;
+	
+	
+	/**
+	 * Create a new label
+	 */
+	public Response createLabel(String token, LabelDTO labelDTO) {
+		
+
+		log.info("Create Label Method");
+		log.info(token);
+		ResponseEntity<Response> res = restTemplate.getForEntity(Constants.USER_EXIST_URL + "?token={token}",
+				Response.class, token);
+		if (res.getStatusCode().value() == 200) {
+			Long uId = Long.parseLong(res.getBody().getObj().toString());
+			Label label = new Label(labelDTO);
+			label.setUserId(uId);
+			boolean exist = labelRepository.findAllByUserId(uId).stream()
+					.noneMatch(lbl -> lbl.getLabelName().equalsIgnoreCase(labelDTO.getLabelName()));
+			if(exist) {
+				labelRepository.save(label);
+				return new Response(HttpStatus.OK.value(), env.getProperty("212"),labelDTO);
+			}
+			return new Response(HttpStatus.ALREADY_REPORTED.value(),env.getProperty("108") ,labelDTO);
+		}
+		else {
+			throw new NoteException(404, env.getProperty("104"));
+		}
+	
+	}
+	
+	/**
+	 * Update the existing label based on it's id
+	 */
+	@Transactional
+	public void updateLabel(String token,  LabelDTO labelDTO, Long lId) {
+		
+		log.info("Create Label Method");
+		log.info(token);
+		ResponseEntity<Response> res = restTemplate.getForEntity(Constants.USER_EXIST_URL + "?token={token}",
+				Response.class, token);
+		if (res.getStatusCode().value() == 200) {
+			Long uId = Long.parseLong(res.getBody().getObj().toString());
+			List<Label> labels = labelRepository.findAllByUserId(uId);
+			Label filteredLabel = labels.stream().filter(lbl -> lbl.getLabelId().equals(lId)).findFirst().orElseThrow(() -> new LabelException(404,env.getProperty("109")));
+			filteredLabel.setLabelName(labelDTO.getLabelName());
+			labelRepository.save(filteredLabel);
+		}
+		else {
+			throw new NoteException(404, env.getProperty("104"));
+		}
+	}
+	
+//	/**
+//	 * Delete the label based on it's id
+//	 */
+//	@Transactional
+//	public void deleteLabel(String token, Long lId) {
+//		Long uId = jwt.decodeToken(token);
+//		User user = repository.findById(uId).orElseThrow(() -> new UserException(404,env.getProperty("104")));
+//		List<Label> labels = user.getLabels();
+//		Label filteredLabel = labels.stream().filter(lbl -> lbl.getLabelId().equals(lId)).findFirst().orElseThrow(() -> new LabelException(404,env.getProperty("109")));
+//		labels.remove(filteredLabel);
+//		labelRepository.deleteById(filteredLabel.getLabelId());
+//		repository.save(user);
+//	}
+//	
+//	/**
+//	 * Get all labels of the user
+//	 */
+//	public List<Label> getAllLables(String token){
+//		Long uId = jwt.decodeToken(token);
+//		User user = repository.findById(uId).orElseThrow(() -> new UserException(404,env.getProperty("104")));
+//		List<Label> labels = user.getLabels();
+//		return labels;
+//	}
+//	
+//	/**
+//	 * Get all notes labeled of perticular id 
+//	 */
+//	public List<Note> getNoteByLabel(String token, Long lid){
+//		Long uId = jwt.decodeToken(token);
+//		User user = repository.findById(uId).orElseThrow(() -> new UserException(404,env.getProperty("104")));
+//		Label lbl = user.getLabels().stream().filter(label -> label.getLabelId().equals(lid)).findFirst().orElseThrow(() -> new LabelException(404,env.getProperty("109")));
+//		return lbl.getNotes();
+//	}
+	
+}

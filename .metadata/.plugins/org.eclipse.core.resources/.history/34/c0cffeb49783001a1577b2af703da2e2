@@ -1,0 +1,48 @@
+package com.bridgelabz.noteservice.repository;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.HashOperations;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.stereotype.Service;
+
+import com.bridgelabz.noteservice.entity.Note;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Service
+@Slf4j
+public class RedisService {
+	
+	private RedisTemplate<String, Note> redisTemplet;
+
+	private HashOperations<String, Long, Note> hashOperations;
+	
+	@Autowired
+	public RedisService(RedisTemplate<String, Note> redisTemplet) {
+		this.redisTemplet = redisTemplet;
+		this.hashOperations = redisTemplet.opsForHash();
+	}
+	
+	public void save(Note note,Long userId) {
+		log.info("Redis service save method");
+		hashOperations.put("User"+userId, note.getNoteId(), note);
+	}
+	
+	public List<Note> findAll(Long userId) {
+		log.info("Redis service Find all method");
+		return new ArrayList<>(hashOperations.entries("User"+userId).values());
+	}
+	
+	public Note findById(String token, Long noteId) {
+		return hashOperations.get(token, noteId);
+	}
+	
+	public void delete(Long userId, Long noteId) {
+		log.info("Redis service delete method");
+		hashOperations.delete("User"+userId, noteId);
+	}
+	
+}

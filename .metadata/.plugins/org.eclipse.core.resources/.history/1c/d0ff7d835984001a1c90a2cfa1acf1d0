@@ -1,0 +1,50 @@
+
+package com.bridgelabz.noteservice.config;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.data.redis.connection.RedisStandaloneConfiguration;
+import org.springframework.data.redis.connection.jedis.JedisClientConfiguration;
+import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer;
+import org.springframework.data.redis.serializer.StringRedisSerializer;
+import org.springframework.web.client.RestTemplate;
+
+import com.bridgelabz.noteservice.entity.Note;
+
+@Configuration
+public class NoteServiceConfig {
+	
+	@Value("${spring.redis.host}")
+    private String REDIS_HOSTNAME;
+	
+    @Value("${spring.redis.port}")
+    private int REDIS_PORT;
+
+	@Bean
+	@LoadBalanced
+	public RestTemplate getRestTemplate() {
+		return new RestTemplate();
+	}
+	
+	@Bean
+	public JedisConnectionFactory jedisConnectionFactory() {
+		RedisStandaloneConfiguration configuration = new RedisStandaloneConfiguration(REDIS_HOSTNAME, REDIS_PORT);
+        JedisClientConfiguration jedisClientConfiguration = JedisClientConfiguration.builder().usePooling().build();
+        JedisConnectionFactory factory = new JedisConnectionFactory(configuration,jedisClientConfiguration);
+        factory.afterPropertiesSet();
+		return factory;
+	}
+	
+	@Bean
+	public RedisTemplate<String, Note> redisTemplet() {
+		RedisTemplate<String, Note> redisTemplate = new RedisTemplate<>();
+//		redisTemplate.setHashKeySerializer(new StringRedisSerializer());
+//        redisTemplate.setHashValueSerializer(new GenericJackson2JsonRedisSerializer());
+		redisTemplate.setConnectionFactory(jedisConnectionFactory());
+		return redisTemplate;
+	}
+}
