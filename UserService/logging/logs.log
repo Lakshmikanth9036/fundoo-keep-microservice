@@ -1,5 +1,0 @@
-2020-04-22 10:15:01 [http-nio-8081-exec-1] INFO  org.apache.juli.logging.DirectJDKLog %PARSER_ERROR[x] -Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-04-22 10:15:01 [http-nio-8081-exec-1] INFO  com.bridgelabz.userservice.service.UserServiceProvider %PARSER_ERROR[x] -getUserByToken Method
-2020-04-22 10:15:01 [http-nio-8081-exec-1] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -Decode Token Method
-2020-04-22 10:15:01 [http-nio-8081-exec-1] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -Get token from redis server
-2020-04-22 10:15:01 [http-nio-8081-exec-1] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -1

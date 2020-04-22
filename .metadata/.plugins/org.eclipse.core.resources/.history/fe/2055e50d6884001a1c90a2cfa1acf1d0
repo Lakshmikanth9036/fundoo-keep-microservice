@@ -1,0 +1,135 @@
+2020-04-22 10:15:01 [http-nio-8081-exec-1] INFO  org.apache.juli.logging.DirectJDKLog %PARSER_ERROR[x] -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-22 10:15:01 [http-nio-8081-exec-1] INFO  com.bridgelabz.userservice.service.UserServiceProvider %PARSER_ERROR[x] -getUserByToken Method
+2020-04-22 10:15:01 [http-nio-8081-exec-1] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -Decode Token Method
+2020-04-22 10:15:01 [http-nio-8081-exec-1] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -Get token from redis server
+2020-04-22 10:15:01 [http-nio-8081-exec-1] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -1
+2020-04-22 10:18:19 [AsyncResolver-bootstrap-executor-0] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver %PARSER_ERROR[x] -Resolving eureka endpoints via configuration
+2020-04-22 10:21:18 [http-nio-8081-exec-3] INFO  com.bridgelabz.userservice.service.UserServiceProvider %PARSER_ERROR[x] -getUserByToken Method
+2020-04-22 10:21:18 [http-nio-8081-exec-3] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -Decode Token Method
+2020-04-22 10:21:18 [http-nio-8081-exec-3] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -Get token from redis server
+2020-04-22 10:21:18 [http-nio-8081-exec-3] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -1
+2020-04-22 10:23:19 [AsyncResolver-bootstrap-executor-0] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver %PARSER_ERROR[x] -Resolving eureka endpoints via configuration
+2020-04-22 10:26:39 [http-nio-8081-exec-5] INFO  com.bridgelabz.userservice.service.UserServiceProvider %PARSER_ERROR[x] -getUserByToken Method
+2020-04-22 10:26:39 [http-nio-8081-exec-5] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -Decode Token Method
+2020-04-22 10:26:39 [http-nio-8081-exec-5] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -Get token from redis server
+2020-04-22 10:26:39 [http-nio-8081-exec-5] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -1
+2020-04-22 10:27:44 [http-nio-8081-exec-7] INFO  com.bridgelabz.userservice.service.UserServiceProvider %PARSER_ERROR[x] -getUserByToken Method
+2020-04-22 10:27:44 [http-nio-8081-exec-7] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -Decode Token Method
+2020-04-22 10:27:44 [http-nio-8081-exec-7] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -Get token from redis server
+2020-04-22 10:27:44 [http-nio-8081-exec-7] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -1
+2020-04-22 10:28:15 [http-nio-8081-exec-8] INFO  com.bridgelabz.userservice.service.UserServiceProvider %PARSER_ERROR[x] -getUserByToken Method
+2020-04-22 10:28:15 [http-nio-8081-exec-8] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -Decode Token Method
+2020-04-22 10:28:15 [http-nio-8081-exec-8] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -Get token from redis server
+2020-04-22 10:28:15 [http-nio-8081-exec-8] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -1
+2020-04-22 10:28:19 [AsyncResolver-bootstrap-executor-0] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver %PARSER_ERROR[x] -Resolving eureka endpoints via configuration
+2020-04-22 10:28:50 [http-nio-8081-exec-9] INFO  com.bridgelabz.userservice.service.UserServiceProvider %PARSER_ERROR[x] -getUserByToken Method
+2020-04-22 10:28:50 [http-nio-8081-exec-9] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -Decode Token Method
+2020-04-22 10:28:50 [http-nio-8081-exec-9] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -Get token from redis server
+2020-04-22 10:28:50 [http-nio-8081-exec-9] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -1
+2020-04-22 10:29:25 [http-nio-8081-exec-10] INFO  com.bridgelabz.userservice.service.UserServiceProvider %PARSER_ERROR[x] -getUserByToken Method
+2020-04-22 10:29:25 [http-nio-8081-exec-10] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -Decode Token Method
+2020-04-22 10:29:25 [http-nio-8081-exec-10] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -Get token from redis server
+2020-04-22 10:29:25 [http-nio-8081-exec-10] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -1
+2020-04-22 10:30:49 [http-nio-8081-exec-2] INFO  com.bridgelabz.userservice.service.UserServiceProvider %PARSER_ERROR[x] -getUserByToken Method
+2020-04-22 10:30:49 [http-nio-8081-exec-2] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -Decode Token Method
+2020-04-22 10:30:49 [http-nio-8081-exec-2] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -Get token from redis server
+2020-04-22 10:30:49 [http-nio-8081-exec-2] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -1
+2020-04-22 10:32:35 [http-nio-8081-exec-4] INFO  com.bridgelabz.userservice.service.UserServiceProvider %PARSER_ERROR[x] -getUserByToken Method
+2020-04-22 10:32:35 [http-nio-8081-exec-4] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -Decode Token Method
+2020-04-22 10:32:35 [http-nio-8081-exec-4] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -Get token from redis server
+2020-04-22 10:32:35 [http-nio-8081-exec-4] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -1
+2020-04-22 10:33:18 [http-nio-8081-exec-5] INFO  com.bridgelabz.userservice.service.UserServiceProvider %PARSER_ERROR[x] -getUserByToken Method
+2020-04-22 10:33:18 [http-nio-8081-exec-5] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -Decode Token Method
+2020-04-22 10:33:18 [http-nio-8081-exec-5] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -Get token from redis server
+2020-04-22 10:33:18 [http-nio-8081-exec-5] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -1
+2020-04-22 10:33:19 [AsyncResolver-bootstrap-executor-0] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver %PARSER_ERROR[x] -Resolving eureka endpoints via configuration
+2020-04-22 10:34:07 [http-nio-8081-exec-6] INFO  com.bridgelabz.userservice.service.UserServiceProvider %PARSER_ERROR[x] -getUserByToken Method
+2020-04-22 10:34:07 [http-nio-8081-exec-6] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -Decode Token Method
+2020-04-22 10:34:07 [http-nio-8081-exec-6] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -Get token from redis server
+2020-04-22 10:34:07 [http-nio-8081-exec-6] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -1
+2020-04-22 10:36:14 [http-nio-8081-exec-8] INFO  com.bridgelabz.userservice.service.UserServiceProvider %PARSER_ERROR[x] -getUserByToken Method
+2020-04-22 10:36:14 [http-nio-8081-exec-8] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -Decode Token Method
+2020-04-22 10:36:14 [http-nio-8081-exec-8] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -Get token from redis server
+2020-04-22 10:36:14 [http-nio-8081-exec-8] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -1
+2020-04-22 10:38:19 [AsyncResolver-bootstrap-executor-0] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver %PARSER_ERROR[x] -Resolving eureka endpoints via configuration
+2020-04-22 10:41:34 [http-nio-8081-exec-10] INFO  com.bridgelabz.userservice.service.UserServiceProvider %PARSER_ERROR[x] -getUserByToken Method
+2020-04-22 10:41:34 [http-nio-8081-exec-10] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -Decode Token Method
+2020-04-22 10:41:34 [http-nio-8081-exec-10] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -Get token from redis server
+2020-04-22 10:41:34 [http-nio-8081-exec-10] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -1
+2020-04-22 10:42:38 [http-nio-8081-exec-2] INFO  com.bridgelabz.userservice.service.UserServiceProvider %PARSER_ERROR[x] -getUserByToken Method
+2020-04-22 10:42:38 [http-nio-8081-exec-2] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -Decode Token Method
+2020-04-22 10:42:38 [http-nio-8081-exec-2] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -Get token from redis server
+2020-04-22 10:42:38 [http-nio-8081-exec-2] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -1
+2020-04-22 10:43:19 [AsyncResolver-bootstrap-executor-0] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver %PARSER_ERROR[x] -Resolving eureka endpoints via configuration
+2020-04-22 10:43:51 [http-nio-8081-exec-4] INFO  com.bridgelabz.userservice.service.UserServiceProvider %PARSER_ERROR[x] -getUserByToken Method
+2020-04-22 10:43:51 [http-nio-8081-exec-4] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -Decode Token Method
+2020-04-22 10:43:51 [http-nio-8081-exec-4] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -Get token from redis server
+2020-04-22 10:43:51 [http-nio-8081-exec-4] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -1
+2020-04-22 10:47:07 [http-nio-8081-exec-6] INFO  com.bridgelabz.userservice.service.UserServiceProvider %PARSER_ERROR[x] -getUserByToken Method
+2020-04-22 10:47:07 [http-nio-8081-exec-6] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -Decode Token Method
+2020-04-22 10:47:07 [http-nio-8081-exec-6] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -Get token from redis server
+2020-04-22 10:47:07 [http-nio-8081-exec-6] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -1
+2020-04-22 10:48:19 [AsyncResolver-bootstrap-executor-0] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver %PARSER_ERROR[x] -Resolving eureka endpoints via configuration
+2020-04-22 10:48:43 [http-nio-8081-exec-8] INFO  com.bridgelabz.userservice.service.UserServiceProvider %PARSER_ERROR[x] -getUserByToken Method
+2020-04-22 10:48:43 [http-nio-8081-exec-8] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -Decode Token Method
+2020-04-22 10:48:43 [http-nio-8081-exec-8] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -Get token from redis server
+2020-04-22 10:48:43 [http-nio-8081-exec-8] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -1
+2020-04-22 10:49:39 [http-nio-8081-exec-9] INFO  com.bridgelabz.userservice.service.UserServiceProvider %PARSER_ERROR[x] -getUserByToken Method
+2020-04-22 10:49:39 [http-nio-8081-exec-9] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -Decode Token Method
+2020-04-22 10:49:39 [http-nio-8081-exec-9] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -Get token from redis server
+2020-04-22 10:49:39 [http-nio-8081-exec-9] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -1
+2020-04-22 10:53:19 [AsyncResolver-bootstrap-executor-0] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver %PARSER_ERROR[x] -Resolving eureka endpoints via configuration
+2020-04-22 10:53:37 [http-nio-8081-exec-1] INFO  com.bridgelabz.userservice.service.UserServiceProvider %PARSER_ERROR[x] -getUserByToken Method
+2020-04-22 10:53:37 [http-nio-8081-exec-1] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -Decode Token Method
+2020-04-22 10:53:37 [http-nio-8081-exec-1] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -Get token from redis server
+2020-04-22 10:53:37 [http-nio-8081-exec-1] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -1
+2020-04-22 10:58:19 [AsyncResolver-bootstrap-executor-0] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver %PARSER_ERROR[x] -Resolving eureka endpoints via configuration
+2020-04-22 10:58:43 [http-nio-8081-exec-3] INFO  com.bridgelabz.userservice.service.UserServiceProvider %PARSER_ERROR[x] -getUserByToken Method
+2020-04-22 10:58:43 [http-nio-8081-exec-3] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -Decode Token Method
+2020-04-22 10:58:43 [http-nio-8081-exec-3] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -Get token from redis server
+2020-04-22 10:58:43 [http-nio-8081-exec-3] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -1
+2020-04-22 10:59:19 [http-nio-8081-exec-4] INFO  com.bridgelabz.userservice.service.UserServiceProvider %PARSER_ERROR[x] -getUserByToken Method
+2020-04-22 10:59:19 [http-nio-8081-exec-4] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -Decode Token Method
+2020-04-22 10:59:19 [http-nio-8081-exec-4] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -Get token from redis server
+2020-04-22 10:59:19 [http-nio-8081-exec-4] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -1
+2020-04-22 11:00:05 [http-nio-8081-exec-5] INFO  com.bridgelabz.userservice.service.UserServiceProvider %PARSER_ERROR[x] -getUserByToken Method
+2020-04-22 11:00:05 [http-nio-8081-exec-5] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -Decode Token Method
+2020-04-22 11:00:05 [http-nio-8081-exec-5] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -Get token from redis server
+2020-04-22 11:00:05 [http-nio-8081-exec-5] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -1
+2020-04-22 11:01:52 [http-nio-8081-exec-7] INFO  com.bridgelabz.userservice.service.UserServiceProvider %PARSER_ERROR[x] -getUserByToken Method
+2020-04-22 11:01:52 [http-nio-8081-exec-7] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -Decode Token Method
+2020-04-22 11:01:52 [http-nio-8081-exec-7] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -Get token from redis server
+2020-04-22 11:01:52 [http-nio-8081-exec-7] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -1
+2020-04-22 11:02:15 [http-nio-8081-exec-8] INFO  com.bridgelabz.userservice.service.UserServiceProvider %PARSER_ERROR[x] -getUserByToken Method
+2020-04-22 11:02:15 [http-nio-8081-exec-8] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -Decode Token Method
+2020-04-22 11:02:15 [http-nio-8081-exec-8] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -Get token from redis server
+2020-04-22 11:02:15 [http-nio-8081-exec-8] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -1
+2020-04-22 11:02:52 [http-nio-8081-exec-9] INFO  com.bridgelabz.userservice.service.UserServiceProvider %PARSER_ERROR[x] -getUserByToken Method
+2020-04-22 11:02:52 [http-nio-8081-exec-9] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -Decode Token Method
+2020-04-22 11:02:52 [http-nio-8081-exec-9] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -Get token from redis server
+2020-04-22 11:02:52 [http-nio-8081-exec-9] INFO  com.bridgelabz.userservice.utils.JwtUtils %PARSER_ERROR[x] -1
+2020-04-22 11:03:19 [AsyncResolver-bootstrap-executor-0] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver %PARSER_ERROR[x] -Resolving eureka endpoints via configuration
+2020-04-22 11:08:19 [AsyncResolver-bootstrap-executor-0] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver %PARSER_ERROR[x] -Resolving eureka endpoints via configuration
+2020-04-22 11:13:19 [AsyncResolver-bootstrap-executor-0] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver %PARSER_ERROR[x] -Resolving eureka endpoints via configuration
+2020-04-22 11:18:19 [AsyncResolver-bootstrap-executor-0] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver %PARSER_ERROR[x] -Resolving eureka endpoints via configuration
+2020-04-22 11:23:19 [AsyncResolver-bootstrap-executor-0] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver %PARSER_ERROR[x] -Resolving eureka endpoints via configuration
+2020-04-22 11:28:19 [AsyncResolver-bootstrap-executor-0] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver %PARSER_ERROR[x] -Resolving eureka endpoints via configuration
+2020-04-22 11:33:19 [AsyncResolver-bootstrap-executor-0] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver %PARSER_ERROR[x] -Resolving eureka endpoints via configuration
+2020-04-22 11:38:19 [AsyncResolver-bootstrap-executor-0] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver %PARSER_ERROR[x] -Resolving eureka endpoints via configuration
+2020-04-22 11:43:19 [AsyncResolver-bootstrap-executor-0] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver %PARSER_ERROR[x] -Resolving eureka endpoints via configuration
+2020-04-22 11:48:19 [AsyncResolver-bootstrap-executor-0] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver %PARSER_ERROR[x] -Resolving eureka endpoints via configuration
+2020-04-22 11:53:19 [AsyncResolver-bootstrap-executor-0] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver %PARSER_ERROR[x] -Resolving eureka endpoints via configuration
+2020-04-22 11:58:19 [AsyncResolver-bootstrap-executor-0] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver %PARSER_ERROR[x] -Resolving eureka endpoints via configuration
+2020-04-22 12:03:19 [AsyncResolver-bootstrap-executor-0] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver %PARSER_ERROR[x] -Resolving eureka endpoints via configuration
+2020-04-22 12:08:19 [AsyncResolver-bootstrap-executor-0] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver %PARSER_ERROR[x] -Resolving eureka endpoints via configuration
+2020-04-22 12:13:19 [AsyncResolver-bootstrap-executor-0] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver %PARSER_ERROR[x] -Resolving eureka endpoints via configuration
+2020-04-22 12:18:19 [AsyncResolver-bootstrap-executor-0] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver %PARSER_ERROR[x] -Resolving eureka endpoints via configuration
+2020-04-22 12:23:19 [AsyncResolver-bootstrap-executor-0] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver %PARSER_ERROR[x] -Resolving eureka endpoints via configuration
+2020-04-22 12:28:19 [AsyncResolver-bootstrap-executor-0] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver %PARSER_ERROR[x] -Resolving eureka endpoints via configuration
+2020-04-22 12:33:19 [AsyncResolver-bootstrap-executor-0] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver %PARSER_ERROR[x] -Resolving eureka endpoints via configuration
+2020-04-22 12:37:35 [RMI TCP Connection(5)-127.0.0.1] WARN  com.netflix.discovery.DiscoveryClient$3 %PARSER_ERROR[x] -Saw local status change event StatusChangeEvent [timestamp=1587539255085, current=DOWN, previous=UP]
+2020-04-22 12:37:35 [DiscoveryClient-InstanceInfoReplicator-0] INFO  com.netflix.discovery.DiscoveryClient %PARSER_ERROR[x] -DiscoveryClient_USER-SERVICE/DESKTOP-VJE8VFV:user-service:8081: registering service...
+2020-04-22 12:37:35 [DiscoveryClient-InstanceInfoReplicator-0] INFO  com.netflix.discovery.DiscoveryClient %PARSER_ERROR[x] -DiscoveryClient_USER-SERVICE/DESKTOP-VJE8VFV:user-service:8081 - registration status: 204
+2020-04-22 12:37:36 [RMI TCP Connection(5)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource %PARSER_ERROR[x] -HikariPool-2 - Shutdown initiated...
+2020-04-22 12:37:36 [RMI TCP Connection(5)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource %PARSER_ERROR[x] -HikariPool-2 - Shutdown completed.
+2020-04-22 12:37:36 [RMI TCP Connection(5)-127.0.0.1] INFO  com.netflix.discovery.DiscoveryClient %PARSER_ERROR[x] -Shutting down DiscoveryClient ...

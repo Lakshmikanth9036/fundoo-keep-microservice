@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="javax.validation.Valid"/>
-<fullyQualifiedTypeName name="com.bridgelabz.userservice.dto.RegistrationDTO"/>
-<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PutMapping"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
 <fullyQualifiedTypeName name="com.bridgelabz.userservice.dto.LoginResponse"/>
 <fullyQualifiedTypeName name="com.bridgelabz.userservice.dto.LoginDTO"/>
@@ -48,8 +45,6 @@
 <fullyQualifiedTypeName name="com.bridgelabz.noteservice.entity.Note"/>
 <fullyQualifiedTypeName name="org.springframework.data.redis.core.HashOperations"/>
 <fullyQualifiedTypeName name="com.bridgelabz.noteservice.repository.RedisService"/>
-<fullyQualifiedTypeName name="java.util.Map"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="java.io.Serializable"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="org.springframework.data.redis.core.ValueOperations"/>
@@ -60,4 +55,9 @@
 <fullyQualifiedTypeName name="org.springframework.data.redis.serializer.StringRedisSerializer"/>
 <fullyQualifiedTypeName name="org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer"/>
 <fullyQualifiedTypeName name="lombok.extern.slf4j.Slf4j"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="lombok.ToString"/>
+<fullyQualifiedTypeName name="com.fasterxml.jackson.databind.ObjectMapper"/>
+<fullyQualifiedTypeName name="java.util.Map"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
 </qualifiedTypeNameHistroy>
