@@ -22,6 +22,7 @@ import com.bridgelabz.userservice.dto.LoginDTO;
 import com.bridgelabz.userservice.dto.LoginResponse;
 import com.bridgelabz.userservice.dto.RegistrationDTO;
 import com.bridgelabz.userservice.dto.Response;
+import com.bridgelabz.userservice.exception.TokenException;
 import com.bridgelabz.userservice.service.UserService;
 
 @RestController
@@ -45,7 +46,7 @@ public class UserServiceController {
 	}
 	
 	@PutMapping("/registration/verify/{token}")
-	private ResponseEntity<Response> userLoginVerification(@PathVariable String token) {
+	private ResponseEntity<Response> userLoginVerification(@PathVariable String token) throws TokenException {
 		if(service.updateVerificationStatus(token)>0)
 			return ResponseEntity.ok().body(new Response(HttpStatus.OK.value(), env.getProperty("201")));
 		return ResponseEntity.badRequest().body(new Response(HttpStatus.BAD_REQUEST.value(), env.getProperty("102")));
@@ -67,7 +68,7 @@ public class UserServiceController {
 
 	@PutMapping("/resetpassword/{token}")
 	private ResponseEntity<Response> resetpassword(@PathVariable String token,
-			@RequestParam String newPassword) {
+			@RequestParam String newPassword) throws TokenException {
 		if(service.resetPassword(token, newPassword)>0)
 			return ResponseEntity.status(HttpStatus.OK).body(new Response(HttpStatus.OK.value(), env.getProperty("203")));
 		return ResponseEntity.badRequest()
@@ -75,7 +76,7 @@ public class UserServiceController {
 	}
 	
 	@GetMapping("/userExist")
-	private ResponseEntity<Response> userExist(@RequestParam String token){
+	private ResponseEntity<Response> userExist(@RequestParam String token) throws TokenException{
 		return ResponseEntity.ok()
 				.body(new Response(HttpStatus.OK.value(), env.getProperty("219"), service.getUserByToken(token)));
 	}

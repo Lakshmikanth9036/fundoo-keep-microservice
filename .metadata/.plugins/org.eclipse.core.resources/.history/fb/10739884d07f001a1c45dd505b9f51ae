@@ -1,12 +1,0 @@
-spring:
-  profiles: dev
-  datasource:
-    url: jdbc:mysql://localhost:3306/${dbName}?createDatabaseIfNotExist=true
-    username: ${userName}
-    password: ${password}
-    
-eureka:  client:    register-with-eureka:  true
-    fetch-registry:  true
-    serviceUrl:
-      defaultZone: http://localhost:8070/eureka/
-  instance:    hostname: localhost

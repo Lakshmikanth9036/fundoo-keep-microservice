@@ -1,9 +1,0 @@
-package com.bridgelabz.userservice.controller;
-
-import org.springframework.http.ResponseEntity;
-
-public class UserServiceController {
-
-	
-	public ResponseEntity<>
-}

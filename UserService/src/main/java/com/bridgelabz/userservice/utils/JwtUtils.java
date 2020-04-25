@@ -14,27 +14,36 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import lombok.extern.slf4j.Slf4j;
 
+
 @Service
 @Slf4j
 public class JwtUtils {
 
+	public enum Token{
+		WITH_EXPIRE_TIME,WITHOUT_EXPIRE_TIME
+	}
+	
 	@Autowired
 	private RedisService redisService;
 
 	private final String SECRET = "kanth@123";
 	private final long JWT_TOKEN_VALIDITY = 5 * 60 * 60;
 
-	public String generateToken(Long id) {
-		return Jwts.builder().setSubject(String.valueOf(id))
+	public String generateToken(Long id,Token expiration) {
+		log.info(expiration+ " ");
+		if(expiration.equals(Token.WITH_EXPIRE_TIME)) {
+			log.info("WITH_EXPIRE_TIME");
+			return Jwts.builder().setSubject(String.valueOf(id))
 				.setExpiration(new Date(System.currentTimeMillis() + JWT_TOKEN_VALIDITY * 1000))
 				.signWith(SignatureAlgorithm.HS512, SECRET).compact();
+		}
+		else {
+			log.info("WITHOUT_EXPIRE_TIME");
+			return Jwts.builder().setSubject(String.valueOf(id)).signWith(SignatureAlgorithm.HS512, SECRET).compact();
+		}
 	}
 
-	public String generateUserToken(Long id) {
-		return Jwts.builder().setSubject(String.valueOf(id)).signWith(SignatureAlgorithm.HS512, SECRET).compact();
-	}
-
-	public Long decodeToken(String jwt) {
+	public Long decodeToken(String jwt) throws TokenException {
 
 		log.info("Decode Token Method");
 		if (redisService.getToken(jwt) != null) {
@@ -42,15 +51,11 @@ public class JwtUtils {
 			log.info(redisService.getToken(jwt).toString());
 			return redisService.getToken(jwt);
 		} else {
-			try {
-				log.info("Get token by decoding");
-				Claims claim = Jwts.parser().setSigningKey(SECRET).parseClaimsJws(jwt).getBody();
-				Long id = Long.parseLong(claim.getSubject());
-				redisService.putToken(jwt, id);
-				return id;
-			} catch (TokenException e) {
-				throw new TokenException(HttpStatus.REQUEST_TIMEOUT.value(), "HttpStatus.REQUEST_TIMEOUT.toString()");
-			}
+			log.info("Get token by decoding");
+			Claims claim = Jwts.parser().setSigningKey(SECRET).parseClaimsJws(jwt).getBody();
+			Long id = Long.parseLong(claim.getSubject());
+			redisService.putToken(jwt, id);
+			return id;
 		}
 	}
 }

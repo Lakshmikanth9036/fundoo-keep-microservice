@@ -1,6 +1,6 @@
 package com.bridgelabz.userservice.exception;
 
-public class TokenException extends RuntimeException{
+public class TokenException extends Exception{
 
 private static final long serialVersionUID = 5460492644658485956L;
 	

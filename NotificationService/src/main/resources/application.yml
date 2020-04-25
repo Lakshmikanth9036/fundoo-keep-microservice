@@ -2,7 +2,7 @@ spring:
   mail:
     username: kanth1997.9036@gmail.com 
 #    ${mailId}
-    password: 
+    password: 9449302432hema
 #    ${mailPassword}
     
 eureka:

@@ -1,0 +1,14 @@
+2020-04-25 14:19:24 [http-nio-8082-exec-1] INFO  org.apache.juli.logging.DirectJDKLog %PARSER_ERROR[x] -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-25 14:19:24 [http-nio-8082-exec-1] INFO  com.bridgelabz.notificationservice.service.MailService %PARSER_ERROR[x] -Mail service method ===> mailId kanth9036.1997@gmail.com
+2020-04-25 14:19:24 [http-nio-8082-exec-1] INFO  com.bridgelabz.notificationservice.service.MailService %PARSER_ERROR[x] -Mail service method ===> mailPassword ===> 944302432hema
+2020-04-25 14:23:26 [AsyncResolver-bootstrap-executor-0] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver %PARSER_ERROR[x] -Resolving eureka endpoints via configuration
+2020-04-25 14:28:26 [AsyncResolver-bootstrap-executor-0] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver %PARSER_ERROR[x] -Resolving eureka endpoints via configuration
+2020-04-25 14:28:33 [RMI TCP Connection(5)-127.0.0.1] WARN  com.netflix.discovery.DiscoveryClient$3 %PARSER_ERROR[x] -Saw local status change event StatusChangeEvent [timestamp=1587805113250, current=DOWN, previous=UP]
+2020-04-25 14:28:33 [DiscoveryClient-InstanceInfoReplicator-0] INFO  com.netflix.discovery.DiscoveryClient %PARSER_ERROR[x] -DiscoveryClient_NOTIFICATION-SERVICE/DESKTOP-VJE8VFV:notification-service:8082: registering service...
+2020-04-25 14:28:33 [RMI TCP Connection(5)-127.0.0.1] INFO  com.netflix.discovery.DiscoveryClient %PARSER_ERROR[x] -Shutting down DiscoveryClient ...
+2020-04-25 14:28:33 [DiscoveryClient-InstanceInfoReplicator-0] INFO  com.netflix.discovery.DiscoveryClient %PARSER_ERROR[x] -DiscoveryClient_NOTIFICATION-SERVICE/DESKTOP-VJE8VFV:notification-service:8082 - registration status: 204
+2020-04-25 14:28:33 [RMI TCP Connection(5)-127.0.0.1] INFO  com.netflix.discovery.DiscoveryClient %PARSER_ERROR[x] -Unregistering ...
+2020-04-25 14:28:33 [RMI TCP Connection(5)-127.0.0.1] INFO  com.netflix.discovery.DiscoveryClient %PARSER_ERROR[x] -DiscoveryClient_NOTIFICATION-SERVICE/DESKTOP-VJE8VFV:notification-service:8082 - deregister  status: 200
+2020-04-25 14:28:33 [RMI TCP Connection(5)-127.0.0.1] INFO  com.netflix.discovery.DiscoveryClient %PARSER_ERROR[x] -Completed shut down of DiscoveryClient
+2020-04-25 14:28:33 [RMI TCP Connection(5)-127.0.0.1] INFO  org.apache.juli.logging.DirectJDKLog %PARSER_ERROR[x] -Stopping service [Tomcat]
+2020-04-25 14:28:33 [RMI TCP Connection(5)-127.0.0.1] INFO  org.apache.juli.logging.DirectJDKLog %PARSER_ERROR[x] -Destroying Spring FrameworkServlet 'dispatcherServlet'

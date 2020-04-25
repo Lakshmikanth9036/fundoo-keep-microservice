@@ -1,0 +1,63 @@
+package com.bridgelabz.userservice.utils;
+
+import java.util.Date;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Service;
+
+import com.bridgelabz.userservice.exception.TokenException;
+import com.bridgelabz.userservice.repository.RedisService;
+
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
+import lombok.extern.slf4j.Slf4j;
+
+
+@Service
+@Slf4j
+public class JwtUtils {
+
+	public enum Token{
+		WITH_EXPIRE_TIME,WITHOUT_EXPIRE_TIME
+	}
+	
+	@Autowired
+	private RedisService redisService;
+
+	private final String SECRET = "kanth@123";
+	private final long JWT_TOKEN_VALIDITY = 5 * 60 * 60;
+
+	public String generateToken(Long id,Token expiration) {
+		log.info(expiration+ " ");
+		if(expiration.equals(Token.WITH_EXPIRE_TIME)) {
+			return Jwts.builder().setSubject(String.valueOf(id))
+				.setExpiration(new Date(System.currentTimeMillis() + JWT_TOKEN_VALIDITY * 1000))
+				.signWith(SignatureAlgorithm.HS512, SECRET).compact();
+		}
+		else {
+			return Jwts.builder().setSubject(String.valueOf(id)).signWith(SignatureAlgorithm.HS512, SECRET).compact();
+		}
+	}
+
+//	public String generateUserToken(Long id) {
+//		
+//	}
+
+	public Long decodeToken(String jwt) throws TokenException {
+
+		log.info("Decode Token Method");
+		if (redisService.getToken(jwt) != null) {
+			log.info("Get token from redis server");
+			log.info(redisService.getToken(jwt).toString());
+			return redisService.getToken(jwt);
+		} else {
+			log.info("Get token by decoding");
+			Claims claim = Jwts.parser().setSigningKey(SECRET).parseClaimsJws(jwt).getBody();
+			Long id = Long.parseLong(claim.getSubject());
+			redisService.putToken(jwt, id);
+			return id;
+		}
+	}
+}
